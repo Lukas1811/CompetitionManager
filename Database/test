@@ -1,0 +1,9 @@
+{
+    "name": "test",
+    "path": "./Database/test",
+    "bows": [],
+    "classes": [
+        "test class"
+    ],
+    "archers": {}
+}
