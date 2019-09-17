@@ -37,7 +37,6 @@ class Competition:
 
     def add_class(self, name: str):
         if not name in self.archer_classes:
-            print(self.archer_classes)
             self.archer_classes.append(name)
         else:
             log.warn("Class {0} already exists!".format(name))
@@ -90,6 +89,8 @@ class Competition:
         config["classes"] = self.archer_classes
         config["archers"] = self.archers
 
+        print(config)
+
         for archer_obj in self.archers:
             archer = self.archers[archer_obj].to_dict()
             config["archers"].update({archer["name"]: archer})
@@ -108,7 +109,7 @@ class Competition:
             competition = Competition(config["name"], config["path"])
             competition.bow_types = config["bows"]
             competition.archer_classes = config["classes"]
-            competition.archer_classes = config["archers"]
+            competition.archers = config["archers"]
 
             log.info("Loaded competition {0}!".format(competition.name))
 

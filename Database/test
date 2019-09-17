@@ -1,7 +1,12 @@
 {
     "name": "test",
     "path": "./Database/test",
-    "bows": [],
+    "bows": [
+        "test bow",
+        "test bow 2",
+        "test bow 3",
+        "test bow 4"
+    ],
     "classes": [
         "test class"
     ],

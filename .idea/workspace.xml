@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="843608f7-af10-4509-8ad2-a13343eff38b" name="Default Changelist" comment="" />
+    <list default="true" id="843608f7-af10-4509-8ad2-a13343eff38b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Frontend/css/materialize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/css/materialize.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/js/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/js/jquery-3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/js/materialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/js/materialize.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Competition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Competition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompetitionManger.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompetitionManger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/test" beforeDir="false" afterPath="$PROJECT_DIR$/Database/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,14 +33,17 @@
   </component>
   <component name="ProjectId" id="1QZRKlnEnuMPD04PddAB95AKp47" />
   <component name="PropertiesComponent">
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CompetitionManger.py" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Programming\CompetitionManager\Backend" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Programming\CompetitionManager\Frontend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\CompetitionManager\Frontend\js" />
+      <recent name="D:\Programming\CompetitionManager\Frontend\css" />
+      <recent name="D:\Programming\CompetitionManager\Backend" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -83,7 +99,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
