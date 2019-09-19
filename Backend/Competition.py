@@ -1,4 +1,6 @@
 import json
+from os import listdir
+from os.path import abspath
 
 from Backend.Archer import Archer
 from Backend.logger import Logger as log
@@ -114,3 +116,14 @@ class Competition:
             log.info("Loaded competition {0}!".format(competition.name))
 
             return competition
+
+    @staticmethod
+    def list_competitions():
+        database_dir = abspath("./Database")
+        files = listdir(database_dir)
+        files.remove("__init__.py")
+
+        return files
+
+
+

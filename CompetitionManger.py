@@ -8,7 +8,7 @@ from Frontend.Frontend import Frontend
 DATABASE_FOLDER = "./Database/"
 
 if __name__ == "__main__":
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder=Frontend.HTML_DIR)
 
     api = API(app, DATABASE_FOLDER)
     frontend = Frontend(app)

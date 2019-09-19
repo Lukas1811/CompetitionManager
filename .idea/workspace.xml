@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="843608f7-af10-4509-8ad2-a13343eff38b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/css/materialize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/css/materialize.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/html/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/js/jquery-3.4.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/js/jquery-3.4.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/js/materialize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/js/materialize.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/css/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/css/material_icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/html/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/API.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/API.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/Competition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Competition.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CompetitionManger.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompetitionManger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/test" beforeDir="false" afterPath="$PROJECT_DIR$/Database/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/html/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,13 +34,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CompetitionManger.py" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\CompetitionManager\Frontend\css" />
+      <recent name="D:\Programming\CompetitionManager\Frontend\js" />
+      <recent name="D:\Programming\CompetitionManager\Backend" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Programming\CompetitionManager\Frontend" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Programming\CompetitionManager\Frontend\js" />
-      <recent name="D:\Programming\CompetitionManager\Frontend\css" />
-      <recent name="D:\Programming\CompetitionManager\Backend" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,5 +103,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Backend/Competition.py</url>
+          <line>120</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

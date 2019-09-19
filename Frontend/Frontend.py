@@ -1,25 +1,21 @@
 from os.path import abspath
-from flask import Flask, send_from_directory
+from flask import send_from_directory, render_template
 
 from Backend.Competition import Competition
 from Backend.logger import Logger as log
 
 class Frontend:
+    CSS_DIR = "./Frontend/css/"
+    JS_DIR = "./Frontend/js/"
+    HTML_DIR = "./Frontend/html/"
+
     def __init__(self, app: object):
         self.app = app
-
-        self.html_dir = abspath("./Frontend/html")
-        self.css_dir = abspath("./Frontend/css")
-        self.js_dir = abspath("./Frontend/js")
-
-        print(self.html_dir)
 
         self.url_endpoints = [
             ["/static/js/<string:file>/", "static_js", self.static_js, ["GET"]],
             ["/static/css/<string:file>/", "static_css", self.static_css, ["GET"]],
-            ["/<string:file>/", "static_html", self.static_html, ["GET"]],
-            ["/<string:file>/", "static_html", self.static_html, ["GET"]],
-            ["/", "index_html", self.static_html, ["GET"]],
+            ["/", "index_html", self.index, ["GET"]],
         ]
 
         for endpoint in self.url_endpoints:
@@ -28,11 +24,11 @@ class Frontend:
         log.info("Initialized Frontend")
 
     def static_js(self, file: str):
-        return send_from_directory(self.js_dir, file)
+        return send_from_directory(Frontend.JS_DIR, file)
 
     def static_css(self, file: str):
-        return send_from_directory(self.css_dir, file)
+        return send_from_directory(Frontend.CSS_DIR, file)
 
-    def static_html(self, file="index.html"):
-        return send_from_directory(self.html_dir, file)
+    def index(self):
+        return render_template("index.html")
 

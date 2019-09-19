@@ -14,6 +14,7 @@ class API:
         self.competitions = {}
 
         self.url_endpoints = [
+            ["/competition/existing", "existing_competitions", API.existing_competitions, ["GET"]],
             ["/competition/<string:competition_name>/new", "new_competition", self.new_competition, ["GET"]],
             ["/competition/<string:competition_name>/load", "load_competition", self.load_competition, ["GET"]],
             ["/competition/<string:competition_name>/save", "save_competition", self.save_competition, ["GET"]],
@@ -180,3 +181,10 @@ class API:
                     "status": "SUCCESS"
                 }
 
+
+    @staticmethod
+    def existing_competitions():
+        return {
+            "status": "SUCCESS",
+            "competitions": Competition.list_competitions()
+        }
