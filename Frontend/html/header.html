@@ -46,7 +46,7 @@
 
         <nav class="blue-grey darken-4">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo center">Competition Manager</a>
+                <a href="#!" class="left brand-logo">Competition Manager</a>
                 <ul class="right valign-wrapper">
                     <li><a href="edit_competition.html">Settings</a></li>
                     <li><a class="dropdown_trigger" data-target="competitions_dropdown" id="competitions_dropdown_nav_entry">Competitions<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -57,12 +57,11 @@
             </div>
         </nav>
 
-        <div class="row">
-            <div class="col s12">
-                {% block page_content %}
 
-                {% endblock %}
-            </div>
+        <div style="margin: 1%; width: 98%; padding: 1%; border-radius: 5px; background: white;">
+            {% block page_content %}
+
+            {% endblock %}
         </div>
     </body>
 </hmtl>

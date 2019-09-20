@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, jsonify
 import os
 
 from Backend.Competition import Competition
@@ -38,11 +38,11 @@ class API:
 
         self.competitions.update({competition_name: competition})
 
-        return {
+        return jsonify({
             "status": "SUCCESS",
             "competition_name": competition_name,
             "new": True
-        }
+        })
 
     def load_competition(self, competition_name: str):
         if competition_name not in self.competitions:
@@ -50,52 +50,52 @@ class API:
                 competition = Competition.load_competition(self.db_folder + competition_name)
                 self.competitions.update({competition_name: competition})
 
-                return {
+                return jsonify({
                     "status": "SUCCESS",
                     "competition_name": competition_name,
                     "new": False
-                }
+                })
             except OSError:
                 log.error("Could not find config for competition {0}".format(competition_name))
 
-                return {
+                return jsonify({
                     "status": "ERROR",
                     "error_message": "ALREADY_LOADED",
                     "competition_name": competition_name,
                     "new": False
-                }
+                })
 
             except Exception as exc:
                 log.info("Could not find config for competition {0} \n Exception: {1}".format(competition_name, exc))
 
-                return {
+                return jsonify({
                     "status": "ERROR",
                     "error_message": "CONFIG_LOADING_ERROR",
                     "competition_name": competition_name,
                     "new": False
-                }
+                })
 
         elif competition_name in self.competitions:
-            return {
+            return jsonify({
                 "status": "ERROR",
                 "error_message": "ALREADY_LOADED"
-                }
+                })
 
     def save_competition(self, competition_name: str):
         if competition_name not in self.competitions:
             log.warn("Competition not loaded, can not save competition!")
 
-            return {
+            return jsonify({
                 "status": "ERROR",
                 "error_message": "COMPETITION_NOT_LOADED"
-            }
+            })
 
         else:
             self.competitions[competition_name].save()
 
-        return {
+        return jsonify({
             "status": "SUCCESS"
-        }
+        })
 
     def import_archers(self, competition_name: str):
         if competition_name not in self.competitions:
@@ -113,17 +113,17 @@ class API:
 
                 self.competitions[competition_name].import_archers(path + "/{0}_archers".format(competition_name))
 
-                return {
+                return jsonify({
                     "status": "SUCCESS",
                     "new_archers": len(self.competitions[competition_name].archers)
-                    }
+                    })
 
     def get_archers(self, competition_name: str):
         if request.method == "GET":
-            return {
+            return jsonify({
                 "status": "SUCCESS",
                 "archers": self.competitions[competition_name].archers
-                }
+                })
 
     def add_archer(self, competition_name: str):
         if competition_name in self.competitions:
@@ -140,16 +140,16 @@ class API:
 
                 log.info("Added new archer (name: {0}, bow: {1}, class: {2}".format(name, bow_type, archer_class))
 
-                return {
+                return jsonify({
                     "status": "SUCCESS"
-                }
+                })
         else:
             log.error("No competition with name {0} loaded".format(competition_name))
 
-            return {
+            return jsonify({
                 "status": "ERROR",
                 "error_message": "UNKNOWN_COMPETITION"
-            }
+            })
 
     def add_bow_type(self, competition_name: str):
         if competition_name in self.competitions:
@@ -162,9 +162,9 @@ class API:
 
                 competition.add_bow(bow_type)
 
-                return {
+                return jsonify({
                     "status": "SUCCESS"
-                }
+                })
 
     def add_class(self, competition_name: str):
         if competition_name in self.competitions:
@@ -177,14 +177,15 @@ class API:
 
                 competition.add_class(archer_class)
 
-                return {
+                return jsonify({
                     "status": "SUCCESS"
-                }
+                })
 
 
     @staticmethod
     def existing_competitions():
-        return {
+        print(Competition.list_competitions())
+        return jsonify({
             "status": "SUCCESS",
             "competitions": Competition.list_competitions()
-        }
+        })

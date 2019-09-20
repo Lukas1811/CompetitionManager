@@ -2,8 +2,34 @@
 
 {% block page_content %}
 
-<div>
-    <p class="white">Test</p>
+<script>
+    function update_competitions_dropdown(){
+                $.get("/competition/existing", function(data, status){
+                    for(index = 0; index < data["competitions"].length; index++){
+                        name = data["competitions"][index]
+                        $("#competitions_table")
+                            .append($("<tr></tr>"))
+                            .append("<th>" + name + "</th>")
+                    }
+                });
+            }
+</script>
+
+<div class="white row">
+    <div class="col s6">
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Competition</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="competitions_table">
+
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
 {% endblock %}
