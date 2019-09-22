@@ -1,0 +1,120 @@
+{% extends   "header.html" %}
+
+{% block page_content %}
+
+<script>
+    function load_archers(){
+        $.ajax({
+          type: "GET",
+          url: "/competition/" + selected_competition + "/archers",
+          success: function(data, status, request_object){
+            $(".archer_entrys").remove();
+
+            for(var it=0; it < data["archers"].length; it++){
+                $("#new_archer").after(`<div class="row collection-item archer_entrys valign-wrapper">
+                                            <p class="col s3">${data["archers"][it].name}</p>
+                                            <p class="col s2">${data["archers"][it].class}</p>
+                                            <p class="col s2">${data["archers"][it].bow}</p>
+                                            <p class="col s3">${data["archers"][it].scores}</p>
+                                            <p class="col s1">${data["archers"][it].total_score}</p>
+                                            <i class="material-icons" onclick="remove_archer(\"${data["archers"][it].name}\")">clear</i>
+                                        </div>`);
+            } 
+          },
+          error: function(data, status, request_object){
+            
+          }
+        });
+    }
+
+    function load_competition_data(){
+        $.get("/competition/" + selected_competition + "/data", function(data, status){
+          for(let it=0; it < data["bows"].length; it++){
+            name = data["bows"][it]
+            $("#new_archer_bow").append("<option value='" + name + "' selected>" + name +"</option>");
+          }
+
+          for(let it=0; it < data["classes"].length; it++){
+            name = data["classes"][it]
+            $("#new_archer_class").append("<option value='" + name + "' selected>" + name +"</option>");
+          }
+
+          $('select').formSelect();
+        });
+    }
+
+    function add_new_archer(){
+        var data = {};
+
+        data["name"] = $("#new_archer_name").val()
+        data["bow"] = $("#new_archer_bow").val()
+        data["class"] = $("#new_archer_class").val()
+
+        $.ajax({
+          type: "POST",
+          url: "/competition/" + selected_competition + "/add_archer",
+          data: JSON.stringify(data),
+          contentType: 'application/json;charset=UTF-8',
+          success: function(data, status, request_object){
+            M.toast({html: "Added archer!"});
+            load_archers();
+          },
+          error: function(data, status, request_object){
+            M.toast({html: "Error while adding archer!"});
+          }
+        })
+    }
+
+    $(document).ready(function(){
+        $('select').formSelect();
+        load_competition_data();
+        load_archers();
+    });
+</script>
+
+<div class="white row">
+    <nav>
+        <div class="nav-wrapper" style="background-color: white !important; color: grey !important">
+          <form>
+            <div class="input-field">
+              <input id="search_bar" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons" style="color: grey !important;">search</i></label>
+            </div>
+          </form>
+        </div>
+    </nav>
+
+    <div>
+        <ul class="collection with-header">
+            <li class="collection-header">
+                <div class="row">
+                    <p class="col s3">Name</p>
+                    <p class="col s2">Bow</p>
+                    <p class="col s2">Class</p>
+                    <p class="col s3">Scores</p>
+                    <p class="col s2">Total Score</p>
+                </div>
+            </li>
+            <li id="new_archer" class="collection-item">
+                <div class="row valign-wrapper">
+                    <input type="text" id="new_archer_name" class="col s3" placeholder="Name">
+                    <div class="col s3">
+                        <select id="new_archer_bow">
+                            <option value="" disabled selected>Bow</option>   
+                        </select>
+                    </div>
+                    <div class="col s3">
+                        <select id="new_archer_class" class="col s2">
+                            <option value="" disabled selected>Class</option>   
+                        </select>
+                    </div>
+                    <button class="btn waves-effect waves-light col s3" type="button" onclick="add_new_archer();">Add
+                            <i class="material-icons right">add</i>
+                    </button>
+                </div>
+            </li>
+        </ul>     
+    </div>
+</div>
+
+{% endblock %}

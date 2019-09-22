@@ -16,17 +16,21 @@ class API:
         self.url_endpoints = [
             ["/competition/existing", "existing_competitions", API.existing_competitions, ["GET"]],
             ["/competition/<string:competition_name>/new", "new_competition", self.new_competition, ["GET"]],
+            ["/competition/<string:competition_name>/update", "update_competition", self.update_competition_info, ["POST"]],
+            ["/competition/<string:competition_name>/data", "get_competition_data", self.get_competition_data, ["GET"]],
             ["/competition/<string:competition_name>/load", "load_competition", self.load_competition, ["GET"]],
             ["/competition/<string:competition_name>/save", "save_competition", self.save_competition, ["GET"]],
             ["/competition/<string:competition_name>/import_archers", "import_archers", self.import_archers, ["GET"]],
             ["/competition/<string:competition_name>/archers", "get_archers", self.get_archers, ["GET"]],
-            ["/competition/<string:competition_name>/add_archer", "add_archer", self.add_archer, ["GET"]],
-            ["/competition/<string:competition_name>/add_bow_type", "add_bow_type", self.add_bow_type, ["GET"]],
-            ["/competition/<string:competition_name>/add_class", "add_class", self.add_class, ["GET"]]
+            ["/competition/<string:competition_name>/add_archer", "add_archer", self.add_archer, ["POST"]],
+            ["/competition/<string:competition_name>/add_bow", "add_bow_type", self.add_bow_type, ["POST"]],
+            ["/competition/<string:competition_name>/remove_bow", "remove_bow_type", self.remove_bow_type, ["POST"]],
+            ["/competition/<string:competition_name>/add_class", "add_class", self.add_class, ["POST"]],
+            ["/competition/<string:competition_name>/remove_class", "remove_class", self.remove_class, ["POST"]]
         ]
 
         for endpoint in self.url_endpoints:
-            self.app.add_url_rule(endpoint[0], endpoint[1], endpoint[2])
+            self.app.add_url_rule(endpoint[0], endpoint[1], endpoint[2], methods=endpoint[3])
 
         log.info("Initialized API")
 
@@ -43,6 +47,33 @@ class API:
             "competition_name": competition_name,
             "new": True
         })
+
+    def update_competition_info(self, competition_name: str):
+        if competition_name in self.competitions:
+            try:
+                self.competitions[competition_name].set_name(request.json["name"])
+                self.competitions[competition_name].set_date(request.json["date"])
+                self.competitions[competition_name].set_description(request.json["description"])
+                return jsonify({
+                    "status": "SUCCESS"
+                })
+
+            except KeyError:
+                log.warn("Received invalid request for updating competition {0}".format(competition_name))
+        else:
+            log.warn("Competition {0} not loaded couldn't update".format(competition_name))
+
+    def get_competition_data(self, competition_name: str):
+        if competition_name in self.competitions:
+            return jsonify({
+                "description": self.competitions[competition_name].description,
+                "bows": self.competitions[competition_name].bow_types,
+                "classes": self.competitions[competition_name].archer_classes
+            })
+
+        else:
+            log.warn("Competition {0} not loaded couldn't update".format(competition_name))
+
 
     def load_competition(self, competition_name: str):
         if competition_name not in self.competitions:
@@ -120,10 +151,16 @@ class API:
 
     def get_archers(self, competition_name: str):
         if request.method == "GET":
-            return jsonify({
-                "status": "SUCCESS",
-                "archers": self.competitions[competition_name].archers
-                })
+            if competition_name in self.competitions:
+                archers_list = []
+                for archer in self.competitions[competition_name].archers:
+                    archers_list.append(archer.to_dict())
+                    print(archer)
+
+                return jsonify({
+                    "status": "SUCCESS",
+                    "archers": archers_list
+                    })
 
     def add_archer(self, competition_name: str):
         if competition_name in self.competitions:
@@ -166,6 +203,21 @@ class API:
                     "status": "SUCCESS"
                 })
 
+    def remove_bow_type(self, competition_name: str):
+        if competition_name in self.competitions:
+            request_data = request.get_json()
+
+            if request_data:
+                competition = self.competitions[competition_name]
+
+                bow_type = request_data["bow"]
+
+                competition.remove_bow(bow_type)
+
+                return jsonify({
+                    "status": "SUCCESS"
+                })
+
     def add_class(self, competition_name: str):
         if competition_name in self.competitions:
             request_data = request.get_json()
@@ -181,6 +233,20 @@ class API:
                     "status": "SUCCESS"
                 })
 
+    def remove_class(self, competition_name: str):
+        if competition_name in self.competitions:
+            request_data = request.get_json()
+
+            if request_data:
+                competition = self.competitions[competition_name]
+
+                archer_class = request_data["class"]
+
+                competition.remove_class(archer_class)
+
+                return jsonify({
+                    "status": "SUCCESS"
+                })
 
     @staticmethod
     def existing_competitions():

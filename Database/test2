@@ -1,5 +1,7 @@
 {
-    "name": "test2",
+    "name": "test3",
+    "date": "",
+    "description": "wadwad",
     "path": "./Database/test2",
     "bows": [],
     "classes": [],

@@ -3,7 +3,7 @@
 {% block page_content %}
 
 <script>
-    function update_competitions_dropdown(){
+    function update_competitions_table(){
                 $.get("/competition/existing", function(data, status){
                     for(index = 0; index < data["competitions"].length; index++){
                         name = data["competitions"][index]
@@ -13,6 +13,8 @@
                     }
                 });
             }
+
+    update_competitions_table()
 </script>
 
 <div class="white row">
@@ -28,6 +30,9 @@
 
             </tbody>
         </table>
+    </div>
+    <div class="col s6">
+
     </div>
 
 </div>

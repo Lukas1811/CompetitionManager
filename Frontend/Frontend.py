@@ -16,6 +16,9 @@ class Frontend:
             ["/static/js/<string:file>/", "static_js", self.static_js, ["GET"]],
             ["/static/css/<string:file>/", "static_css", self.static_css, ["GET"]],
             ["/", "index_html", self.index, ["GET"]],
+            ["/scoring/", "scoring_html", self.scoring, ["GET"]],
+            ["/new_competition/", "new_competition_html", self.scoring, ["GET"]],
+            ["/edit_competition/", "edit_competition_html", self.edit, ["GET"]],
         ]
 
         for endpoint in self.url_endpoints:
@@ -32,3 +35,11 @@ class Frontend:
     def index(self):
         return render_template("index.html")
 
+    def scoring(self):
+        return render_template("scoring.html")
+
+    def new_competition(self):
+        return render_template("new.html")
+
+    def edit(self):
+        return render_template("settings.html")

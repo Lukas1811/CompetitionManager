@@ -1,6 +1,7 @@
 import json
 from os import listdir
 from os.path import abspath
+from datetime import datetime
 
 from Backend.Archer import Archer
 from Backend.logger import Logger as log
@@ -9,11 +10,23 @@ from Backend.logger import Logger as log
 class Competition:
     def __init__(self, name: str, path: str):
         self.name = name
+        self.description = ""
+        self.date = ""
         self.path = path
         self.config = dict()
         self.bow_types = list()
         self.archer_classes = list()
-        self.archers = dict()
+        self.archers = list()
+        self.creation_date = datetime.now()
+
+    def set_description(self, new_description: str):
+        self.description = new_description
+
+    def set_date(self, new_date: str):
+        self.date = new_date
+
+    def set_name(self, name: str):
+        self.name = name
 
     def add_archer(self, name: str, bow_type: str, archer_class: str):
         if name not in self.archers:
@@ -23,7 +36,7 @@ class Competition:
                                         bow_type,
                                         archer_class)
 
-                    self.archers.update({name: new_archer})
+                    self.archers.append(new_archer)
                 else:
                     log.warn("Class {0} does not exists!".format(archer_class))
             else:
@@ -37,11 +50,23 @@ class Competition:
         else:
             log.warn("Bow {0} already exists!".format(name))
 
+    def remove_bow(self, name: str):
+        if name in self.bow_types:
+            self.bow_types.remove(name)
+        else:
+            log.warn("Bow {0} does not exist!".format(name))
+
     def add_class(self, name: str):
         if not name in self.archer_classes:
             self.archer_classes.append(name)
         else:
             log.warn("Class {0} already exists!".format(name))
+
+    def remove_class(self, name: str):
+        if name in self.archer_classes:
+            self.archer_classes.remove(name)
+        else:
+            log.warn("Class {0} does not exist!".format(name))
 
     def import_archers(self, archer_file: str):
         with open(archer_file, "r") as file:
@@ -61,8 +86,8 @@ class Competition:
         sorted_dict = dict()
 
         for archer in self.archers:
-            bow_type = self.archers[archer].bow_type
-            archer_class = self.archers[archer].archer_class
+            bow_type = archer.bow_type
+            archer_class = archer.archer_class
 
             if bow_type not in sorted_dict:
                 sorted_dict.update({bow_type: dict()})
@@ -70,7 +95,7 @@ class Competition:
             if archer_class not in sorted_dict[bow_type]:
                 sorted_dict[bow_type].update({archer_class: list()})
 
-            sorted_dict[bow_type][archer_class].append(self.archers[archer].to_dict())
+            sorted_dict[bow_type][archer_class].append(archer.to_dict())
 
             sorted_dict[bow_type][archer_class].sort(key=lambda entry: entry["total_score"])
 
@@ -85,17 +110,29 @@ class Competition:
     def to_dict(self) -> dict:
         config = dict()
 
+        path_elements = self.path.split("/")
+        path_elements = path_elements[: len(path_elements) - 1]
+
+        self.path = ""
+
+        for element in path_elements:
+            self.path += element + "/"
+
+        self.path += self.name
+
         config["name"] = self.name
+        config["date"] = self.date
+        config["description"] = self.description
         config["path"] = self.path
         config["bows"] = self.bow_types
         config["classes"] = self.archer_classes
-        config["archers"] = self.archers
-
-        print(config)
+        config["archers"] = {}
 
         for archer_obj in self.archers:
-            archer = self.archers[archer_obj].to_dict()
+            archer = archer_obj.to_dict()
             config["archers"].update({archer["name"]: archer})
+
+        print(config)
 
         return config
 
@@ -109,9 +146,30 @@ class Competition:
             config = json.load(config_file)
 
             competition = Competition(config["name"], config["path"])
+            try:
+                competition.date = config["date"]
+                competition.description = config["description"]
+            except:
+                pass
             competition.bow_types = config["bows"]
             competition.archer_classes = config["classes"]
-            competition.archers = config["archers"]
+
+            archers = []
+
+            for archer in config["archers"]:
+                print(config["archers"][archer])
+                archer_object = Archer( config["archers"][archer]["name"],
+                                        config["archers"][archer]["bow"],
+                                        config["archers"][archer]["class"])
+
+                for score in config["archers"][archer]["scores"]:
+                    archer_object.add_score(score)
+
+                archer_object.calculate_score()
+
+                archers.append(archer_object)
+
+            competition.archers = archers
 
             log.info("Loaded competition {0}!".format(competition.name))
 

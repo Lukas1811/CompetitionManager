@@ -1,14 +1,32 @@
 {
     "name": "test",
+    "date": "",
+    "description": "Test competition\n\nawdwad",
     "path": "./Database/test",
     "bows": [
-        "test bow",
         "test bow 2",
         "test bow 3",
-        "test bow 4"
+        "test bow 4",
+        "test"
     ],
     "classes": [
-        "test class"
+        "test",
+        "class2"
     ],
-    "archers": {}
+    "archers": {
+        "test": {
+            "name": "test",
+            "bow": "test bow 4",
+            "class": "class2",
+            "scores": [],
+            "total_score": 0
+        },
+        "hallo": {
+            "name": "hallo",
+            "bow": "test bow 3",
+            "class": "test",
+            "scores": [],
+            "total_score": 0
+        }
+    }
 }

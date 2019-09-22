@@ -1,19 +1,29 @@
 <hmtl>
     <head>
         <title>CC</title>
-        <link rel="stylesheet" type="text/css" href="static/css/material_icons.css">
-        <link rel="stylesheet" type="text/css" href="static/css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/material_icons.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
 
-        <script src="static/js/jquery-3.4.1.js"></script>
-        <script src="static/js/materialize.js"></script>
+        <script src="/static/js/jquery-3.4.1.js"></script>
+        <script src="/static/js/materialize.js"></script>
 
         <script>
-            active_competition = null;
+            function replace_query_param(param, newval, search) {
+                var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+                var query = search.replace(regex, "$1").replace(/&$/, '');
+
+                return (query.length > 2 ? query + "&" : "?") + (newval ? param + "=" + newval : '');
+            }
+
+            function get_url_param(name){
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                return results[1] || 0;
+            }
 
             function update_competitions_dropdown(){
                 $.get("/competition/existing", function(data, status){
                     for(index = 0; index < data["competitions"].length; index++){
-                        name = data["competitions"][index]
+                        var name = data["competitions"][index]
                         $("#competitions_dropdown")
                             .append($("<li></li>")
                             .append("<p class='center'>" + name + "</p>")
@@ -25,18 +35,30 @@
             }
 
             function set_active_competition(selected_competition){
-                active_competition = selected_competition;
-                $("#competitions_dropdown_nav_entry").text(selected_competition);
-
                 $.get("/competition/" + selected_competition + "/load", function(data, status){
-                    alert("Data: " + data + "\nStatus: " + status);
+                    window.location = window.location.href.split("?")[0] + replace_query_param('competition', selected_competition, window.location.search)
+
+                    $("#competitions_dropdown_nav_entry").text(selected_competition);
                   });
             }
 
               $(document).ready(function(){
                 $('.sidenav').sidenav();
                 $(".dropdown_trigger").dropdown();
-                update_competitions_dropdown()
+                update_competitions_dropdown();
+
+                selected_competition = get_url_param("competition");
+
+                if(selected_competition){
+                    $("#competitions_dropdown_nav_entry").text(selected_competition);
+                    $("#new").attr("href", "/new_competition/?competition=" + selected_competition)
+                    $("#save").click(function(){
+                        $.get("/competition/" + selected_competition + "/save");
+                        M.toast({html: "Saved competition!"})
+                    });
+                    $("#edit").attr("href", "/edit_competition/?competition=" + selected_competition)
+                    $("#scoring").attr("href", "/scoring/?competition=" + selected_competition)
+                }
               });
         </script>
     </head>
@@ -48,11 +70,11 @@
             <div class="nav-wrapper">
                 <a href="#!" class="left brand-logo">Competition Manager</a>
                 <ul class="right valign-wrapper">
-                    <li><a href="edit_competition.html">Settings</a></li>
+                    <li><a id="edit" href="/edit_competition">Settings</a></li>
                     <li><a class="dropdown_trigger" data-target="competitions_dropdown" id="competitions_dropdown_nav_entry">Competitions<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a href="scoring.html">Scoring<i class="material-icons right">edit</i></a></li>
-                    <li><a href="new_competition.html">New<i class="material-icons right">add</i></a></li>
-                    <li><a href="save_competition.html">Save<i class="material-icons right">save</i></a></li>
+                    <li><a id="scoring" href="/scoring">Scoring<i class="material-icons right">edit</i></a></li>
+                    <li><a href="/new_competition">New<i class="material-icons right">add</i></a></li>
+                    <li><a id="save">Save<i class="material-icons right">save</i></a></li>
                 </ul>
             </div>
         </nav>
