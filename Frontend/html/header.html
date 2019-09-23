@@ -1,4 +1,5 @@
 <hmtl>
+
     <head>
         <title>CC</title>
         <link rel="stylesheet" type="text/css" href="/static/css/material_icons.css">
@@ -15,53 +16,57 @@
                 return (query.length > 2 ? query + "&" : "?") + (newval ? param + "=" + newval : '');
             }
 
-            function get_url_param(name){
+            function get_url_param(name) {
                 var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
                 return results[1] || 0;
             }
 
-            function update_competitions_dropdown(){
-                $.get("/competition/existing", function(data, status){
-                    for(index = 0; index < data["competitions"].length; index++){
+            function update_competitions_dropdown() {
+                $.get("/competition/existing", function(data, status) {
+                    for (index = 0; index < data["competitions"].length; index++) {
                         var name = data["competitions"][index]
                         $("#competitions_dropdown")
                             .append($("<li></li>")
-                            .append("<p class='center'>" + name + "</p>")
-                            .click(function(){
-                                set_active_competition($(this).find("p").text());
-                            }));
+                                .append("<p class='center'>" + name + "</p>")
+                                .click(function() {
+                                    set_active_competition($(this).find("p").text());
+                                }));
                     }
                 });
             }
 
-            function set_active_competition(selected_competition){
-                $.get("/competition/" + selected_competition + "/load", function(data, status){
+            function set_active_competition(selected_competition) {
+                $.get("/competition/" + selected_competition + "/load", function(data, status) {
                     window.location = window.location.href.split("?")[0] + replace_query_param('competition', selected_competition, window.location.search)
 
                     $("#competitions_dropdown_nav_entry").text(selected_competition);
-                  });
+                });
             }
 
-              $(document).ready(function(){
+            $(document).ready(function() {
                 $('.sidenav').sidenav();
                 $(".dropdown_trigger").dropdown();
+                $('.modal').modal();
                 update_competitions_dropdown();
 
                 selected_competition = get_url_param("competition");
 
-                if(selected_competition){
+                if (selected_competition) {
                     $("#competitions_dropdown_nav_entry").text(selected_competition);
                     $("#new").attr("href", "/new_competition/?competition=" + selected_competition)
-                    $("#save").click(function(){
+                    $("#save").click(function() {
                         $.get("/competition/" + selected_competition + "/save");
-                        M.toast({html: "Saved competition!"})
+                        M.toast({
+                            html: "Saved competition!"
+                        })
                     });
                     $("#edit").attr("href", "/edit_competition/?competition=" + selected_competition)
                     $("#scoring").attr("href", "/scoring/?competition=" + selected_competition)
                 }
-              });
+            });
         </script>
     </head>
+
     <body class="grey darken-1">
         <ul id="competitions_dropdown" class="dropdown-content">
         </ul>
@@ -73,17 +78,21 @@
                     <li><a id="edit" href="/edit_competition">Settings</a></li>
                     <li><a class="dropdown_trigger" data-target="competitions_dropdown" id="competitions_dropdown_nav_entry">Competitions<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a id="scoring" href="/scoring">Scoring<i class="material-icons right">edit</i></a></li>
-                    <li><a href="/new_competition">New<i class="material-icons right">add</i></a></li>
+                    <li><a class="modal-trigger" href="#new_competition_modal">New<i class="material-icons right">add</i></a></li>
                     <li><a id="save">Save<i class="material-icons right">save</i></a></li>
                 </ul>
             </div>
         </nav>
 
+        <div id="new_competition_modal" class="modal">
+            <div class="modal-content">
+                <p>test</p>
+            </div>
+        </div>
+
 
         <div style="margin: 1%; width: 98%; padding: 1%; border-radius: 5px; background: white;">
-            {% block page_content %}
-
-            {% endblock %}
+            {% block page_content %} {% endblock %}
         </div>
     </body>
 </hmtl>

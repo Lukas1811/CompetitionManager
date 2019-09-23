@@ -1,49 +1,47 @@
-{% extends   "header.html" %}
-
-{% block page_content %}
+{% extends "header.html" %} {% block page_content %}
 
 <script>
-    function load_archers(){
+    function load_archers() {
         $.ajax({
-          type: "GET",
-          url: "/competition/" + selected_competition + "/archers",
-          success: function(data, status, request_object){
-            $(".archer_entrys").remove();
+            type: "GET",
+            url: "/competition/" + selected_competition + "/archers",
+            success: function(data, status, request_object) {
+                $(".archer_entrys").remove();
 
-            for(var it=0; it < data["archers"].length; it++){
-                $("#new_archer").after(`<div class="row collection-item archer_entrys valign-wrapper">
+                for (var it = 0; it < data["archers"].length; it++) {
+                    $("#new_archer").after(`<div class="row collection-item archer_entrys valign-wrapper">
                                             <p class="col s3">${data["archers"][it].name}</p>
                                             <p class="col s2">${data["archers"][it].class}</p>
                                             <p class="col s2">${data["archers"][it].bow}</p>
                                             <p class="col s3">${data["archers"][it].scores}</p>
                                             <p class="col s1">${data["archers"][it].total_score}</p>
-                                            <i class="material-icons" onclick="remove_archer(\"${data["archers"][it].name}\")">clear</i>
+                                            <i class="material-icons" onclick="remove_archer('${data["archers"][it].name}')">clear</i>
                                         </div>`);
-            } 
-          },
-          error: function(data, status, request_object){
-            
-          }
+                }
+            },
+            error: function(data, status, request_object) {
+
+            }
         });
     }
 
-    function load_competition_data(){
-        $.get("/competition/" + selected_competition + "/data", function(data, status){
-          for(let it=0; it < data["bows"].length; it++){
-            name = data["bows"][it]
-            $("#new_archer_bow").append("<option value='" + name + "' selected>" + name +"</option>");
-          }
+    function load_competition_data() {
+        $.get("/competition/" + selected_competition + "/data", function(data, status) {
+            for (let it = 0; it < data["bows"].length; it++) {
+                name = data["bows"][it]
+                $("#new_archer_bow").append("<option value='" + name + "' selected>" + name + "</option>");
+            }
 
-          for(let it=0; it < data["classes"].length; it++){
-            name = data["classes"][it]
-            $("#new_archer_class").append("<option value='" + name + "' selected>" + name +"</option>");
-          }
+            for (let it = 0; it < data["classes"].length; it++) {
+                name = data["classes"][it]
+                $("#new_archer_class").append("<option value='" + name + "' selected>" + name + "</option>");
+            }
 
-          $('select').formSelect();
+            $('select').formSelect();
         });
     }
 
-    function add_new_archer(){
+    function add_new_archer() {
         var data = {};
 
         data["name"] = $("#new_archer_name").val()
@@ -51,21 +49,47 @@
         data["class"] = $("#new_archer_class").val()
 
         $.ajax({
-          type: "POST",
-          url: "/competition/" + selected_competition + "/add_archer",
-          data: JSON.stringify(data),
-          contentType: 'application/json;charset=UTF-8',
-          success: function(data, status, request_object){
-            M.toast({html: "Added archer!"});
-            load_archers();
-          },
-          error: function(data, status, request_object){
-            M.toast({html: "Error while adding archer!"});
-          }
-        })
+            type: "POST",
+            url: "/competition/" + selected_competition + "/add_archer",
+            data: JSON.stringify(data),
+            contentType: 'application/json;charset=UTF-8',
+            success: function(data, status, request_object) {
+                M.toast({
+                    html: "Added archer!"
+                });
+                load_archers();
+            },
+            error: function(data, status, request_object) {
+                M.toast({
+                    html: "Error while adding archer!"
+                });
+            }
+        });
     }
 
-    $(document).ready(function(){
+    function remove_archer(name) {
+        $.ajax({
+            type: "POST",
+            url: "/competition/" + selected_competition + "/remove_archer",
+            data: JSON.stringify({
+                archer: name
+            }),
+            contentType: 'application/json;charset=UTF-8',
+            success: function(data, status, request_object) {
+                M.toast({
+                    html: "removed archer!"
+                });
+                load_archers();
+            },
+            error: function(data, status, request_object) {
+                M.toast({
+                    html: "Error while removing archer!"
+                });
+            }
+        });
+    }
+
+    $(document).ready(function() {
         $('select').formSelect();
         load_competition_data();
         load_archers();
@@ -75,12 +99,12 @@
 <div class="white row">
     <nav>
         <div class="nav-wrapper" style="background-color: white !important; color: grey !important">
-          <form>
-            <div class="input-field">
-              <input id="search_bar" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons" style="color: grey !important;">search</i></label>
-            </div>
-          </form>
+            <form>
+                <div class="input-field">
+                    <input id="search_bar" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons" style="color: grey !important;">search</i></label>
+                </div>
+            </form>
         </div>
     </nav>
 
@@ -113,7 +137,7 @@
                     </button>
                 </div>
             </li>
-        </ul>     
+        </ul>
     </div>
 </div>
 

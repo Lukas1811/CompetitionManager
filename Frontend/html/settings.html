@@ -1,9 +1,7 @@
-{% extends   "header.html" %}
-
-{% block page_content %}
+{% extends "header.html" %} {% block page_content %}
 
 <script>
-    function update_competition(){
+    function update_competition() {
         var data = {};
 
         data["name"] = $("#competition_name").val();
@@ -12,124 +10,143 @@
         data["logo"] = $("#competition_logo").val();
 
         $.ajax({
-          type: "POST",
-          url: "/competition/" + get_url_param("competition") + "/update",
-          data: JSON.stringify(data),
-          contentType: 'application/json;charset=UTF-8'
+            type: "POST",
+            url: "/competition/" + get_url_param("competition") + "/update",
+            data: JSON.stringify(data),
+            contentType: 'application/json;charset=UTF-8'
         })
     }
 
-    function load_data(){
-        $.get("/competition/" + selected_competition + "/data", function(data, status){
-          $("#competition_name").val(selected_competition);
-          $("#competition_description").val(data["description"]);
-          $("#competition_date").val(data["date"]);
+    function load_data() {
+        $.get("/competition/" + selected_competition + "/data", function(data, status) {
+            $("#competition_name").val(selected_competition);
+            $("#competition_description").val(data["description"]);
+            $("#competition_date").val(data["date"]);
 
-          $('#bow_column > .auto_generated').remove();
-          $('#class_column > .auto_generated').remove();
+            $('#bow_column > .auto_generated').remove();
+            $('#class_column > .auto_generated').remove();
 
-          for(let it=0; it < data["bows"].length; it++){
-            name = data["bows"][it]
-            $("#bow_column").append("<li class='collection-item auto_generated'>" + name + "<i onclick='delete_bow(\"" + name +  "\")' class='material-icons right'>clear</i></li>");
-          }
+            for (let it = 0; it < data["bows"].length; it++) {
+                name = data["bows"][it]
+                $("#bow_column").append("<li class='collection-item auto_generated'>" + name + "<i onclick='delete_bow(\"" + name + "\")' class='material-icons right'>clear</i></li>");
+            }
 
-          for(let it=0; it < data["classes"].length; it++){
-            name = data["classes"][it]
-            $("#class_column").append("<li class='collection-item auto_generated'>" + name + "<i onclick='delete_class(\"" + name + "\");' class='material-icons right'>clear</i></li>");
-          }
+            for (let it = 0; it < data["classes"].length; it++) {
+                name = data["classes"][it]
+                $("#class_column").append("<li class='collection-item auto_generated'>" + name + "<i onclick='delete_class(\"" + name + "\");' class='material-icons right'>clear</i></li>");
+            }
         });
     }
 
-    function add_class(){
-      var data = {};
+    function add_class() {
+        var data = {};
 
-      name = $("#new_class_name").val()
-      data["class"] = name
+        name = $("#new_class_name").val()
+        data["class"] = name
 
-      if(data["class"] != ""){
+        if (data["class"] != "") {
+            $.ajax({
+                type: "POST",
+                url: "/competition/" + selected_competition + "/add_class",
+                data: JSON.stringify(data),
+                contentType: 'application/json;charset=UTF-8',
+                success: function(data, status, request_object) {
+                    M.toast({
+                        html: "Added class " + name
+                    });
+                    load_data();
+                    $("#new_class_name").val("")
+                },
+                error: function(data, status, request_object) {
+                    M.toast({
+                        html: "Could not add class " + name
+                    });
+                }
+            })
+        }
+    }
+
+    function delete_class(name) {
         $.ajax({
             type: "POST",
-            url: "/competition/" + selected_competition + "/add_class",
-            data: JSON.stringify(data),
+            url: "/competition/" + selected_competition + "/remove_class",
+            data: JSON.stringify({
+                class: name
+            }),
             contentType: 'application/json;charset=UTF-8',
-            success: function(data, status, request_object){
-              M.toast({html: "Added class " + name});
-              load_data();
-              $("#new_class_name").val("")
+            success: function(data, status, request_object) {
+                M.toast({
+                    html: "Deleted class " + name
+                });
+                load_data();
             },
-            error: function(data, status, request_object){
-              M.toast({html: "Could not add class " + name});
+            error: function(data, status, request_object) {
+                M.toast({
+                    html: "Could not delete class " + name
+                });
             }
-          })
-      }
-    }
-
-    function delete_class(name){
-      $.ajax({
-          type: "POST",
-          url: "/competition/" + selected_competition + "/remove_class",
-          data: JSON.stringify({class : name}),
-          contentType: 'application/json;charset=UTF-8',
-          success: function(data, status, request_object){
-            M.toast({html: "Deleted class " + name});
-            load_data();
-          },
-          error: function(data, status, request_object){
-            M.toast({html: "Could not delete class " + name});
-          }
         })
     }
 
-    function add_bow(){
-      var data = {};
+    function add_bow() {
+        var data = {};
 
-      name = $("#new_bow_name").val();
-      data["bow"] = name;
+        name = $("#new_bow_name").val();
+        data["bow"] = name;
 
-      if(data["bow"] != ""){
+        if (data["bow"] != "") {
+            $.ajax({
+                type: "POST",
+                url: "/competition/" + selected_competition + "/add_bow",
+                data: JSON.stringify(data),
+                contentType: 'application/json;charset=UTF-8',
+                success: function(data, status, request_object) {
+                    M.toast({
+                        html: "Added bow " + name
+                    });
+                    load_data();
+                    $("#new_bow_name").val("")
+                },
+                error: function(data, status, request_object) {
+                    M.toast({
+                        html: "Could not add bow " + name
+                    });
+                }
+            });
+        }
+    }
+
+    function delete_bow(name) {
         $.ajax({
-          type: "POST",
-          url: "/competition/" + selected_competition + "/add_bow",
-          data: JSON.stringify(data),
-          contentType: 'application/json;charset=UTF-8',
-          success: function(data, status, request_object){
-            M.toast({html: "Added bow " + name});
-            load_data();
-            $("#new_bow_name").val("")
-          },
-          error: function(data, status, request_object){
-            M.toast({html: "Could not add bow " + name});
-          }
-        });
-      }
-    }
-
-    function delete_bow(name){
-      $.ajax({
-          type: "POST",
-          url: "/competition/" + selected_competition + "/remove_bow",
-          data: JSON.stringify({bow : name}),
-          contentType: 'application/json;charset=UTF-8',
-          success: function(data, status, request_object){
-            M.toast({html: "Deleted bow " + name});
-            load_data();
-          },
-          error: function(data, status, request_object){
-            M.toast({html: "Could not delete bow " + name});
-          }
+            type: "POST",
+            url: "/competition/" + selected_competition + "/remove_bow",
+            data: JSON.stringify({
+                bow: name
+            }),
+            contentType: 'application/json;charset=UTF-8',
+            success: function(data, status, request_object) {
+                M.toast({
+                    html: "Deleted bow " + name
+                });
+                load_data();
+            },
+            error: function(data, status, request_object) {
+                M.toast({
+                    html: "Could not delete bow " + name
+                });
+            }
         })
 
-      load_data();
+        load_data();
     }
 
-    $(document).ready(function(){
+    $(document).ready(function() {
         load_data();
         $('.datepicker').pickadate({
             selectMonths: true,
             selectYears: 15
-            });
         });
-
+    });
 </script>
 
 <div class="white row">
@@ -146,13 +163,13 @@
             <div class="col s2">
                 <img id="competition_logo">
                 <div class="file-field input-field">
-                  <div class="btn">
-                    <span>Logo</span>
-                    <input type="file">
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Upload a Logo">
-                  </div>
+                    <div class="btn">
+                        <span>Logo</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload a Logo">
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,12 +187,12 @@
             </div>
             <div class="col s6">
                 <ul id="class_column" class="collection">
-                  <li>
-                    <div class="valign-wrapper row">
-                        <input id="new_class_name" class="col s9 right " placeholder="New class..." type="text">
-                        <i class="col s2 material-icons right" onclick="add_class();">add</i>
-                    </div>
-                  </li>
+                    <li>
+                        <div class="valign-wrapper row">
+                            <input id="new_class_name" class="col s9 right " placeholder="New class..." type="text">
+                            <i class="col s2 material-icons right" onclick="add_class();">add</i>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

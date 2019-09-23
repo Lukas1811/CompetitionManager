@@ -23,6 +23,7 @@ class API:
             ["/competition/<string:competition_name>/import_archers", "import_archers", self.import_archers, ["GET"]],
             ["/competition/<string:competition_name>/archers", "get_archers", self.get_archers, ["GET"]],
             ["/competition/<string:competition_name>/add_archer", "add_archer", self.add_archer, ["POST"]],
+            ["/competition/<string:competition_name>/remove_archer", "remove_archer", self.remove_archer, ["POST"]],
             ["/competition/<string:competition_name>/add_bow", "add_bow_type", self.add_bow_type, ["POST"]],
             ["/competition/<string:competition_name>/remove_bow", "remove_bow_type", self.remove_bow_type, ["POST"]],
             ["/competition/<string:competition_name>/add_class", "add_class", self.add_class, ["POST"]],
@@ -187,6 +188,19 @@ class API:
                 "status": "ERROR",
                 "error_message": "UNKNOWN_COMPETITION"
             })
+
+    def remove_archer(self, competition_name: str):
+        if competition_name in self.competitions:
+            request_data = request.get_json()
+
+            for archer in self.competitions[competition_name].archers:
+                if archer.name == request_data["archer"]:
+                    self.competitions[competition_name].remove_archer(archer)
+
+            return jsonify({
+                "status": "SUCCESS"
+            })
+
 
     def add_bow_type(self, competition_name: str):
         if competition_name in self.competitions:

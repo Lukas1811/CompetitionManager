@@ -44,6 +44,10 @@ class Competition:
         else:
             log.warn("Archer {0} already exists!".format(name))
 
+    def remove_archer(self, name: str):
+        if name in self.archers:
+            self.archers.remove(name)
+
     def add_bow(self, name: str):
         if name not in self.bow_types:
             self.bow_types.append(name)
