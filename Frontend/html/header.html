@@ -86,8 +86,25 @@
 
         <div id="new_competition_modal" class="modal">
             <div class="modal-content">
-                <p>test</p>
+                <h3>New competition</h3>
+                <div class="row valign-wrapper">
+                    <div class="col s8">
+                        <input placeholder="Name" id="new_competition_name" type="text">
+                        <label for="new_competition_name">Competitiion Name</label>
+                    </div>
+                    <div class="col s4">
+                        <input  type="date" id="new_competition_date" class="datepicker">
+                        <label for="new_competition_date">Date</label>
+                    </div>
+                </div>
+                <textarea placeholder="Description" id="new_competition_description" class="materialize-textarea"></textarea>
+                <label for="new_competition_description">Description</label>
             </div>
+            <div class="modal-footer">
+                <button class="btn waves-effect waves-light" type="button" onclick="create_competition();">Create
+                    <i class="material-icons right">add</i>
+                </button>
+            </div>          
         </div>
 
 
