@@ -17,6 +17,7 @@ class Frontend:
             ["/static/css/<string:file>/", "static_css", self.static_css, ["GET"]],
             ["/", "index_html", self.index, ["GET"]],
             ["/scoring/", "scoring_html", self.scoring, ["GET"]],
+            ["/archers/", "archers_html", self.archers, ["GET"]],
             ["/edit_competition/", "edit_competition_html", self.edit, ["GET"]],
         ]
 
@@ -33,6 +34,9 @@ class Frontend:
 
     def index(self):
         return render_template("index.html")
+
+    def archers(self):
+        return render_template("archers.html")
 
     def scoring(self):
         return render_template("scoring.html")

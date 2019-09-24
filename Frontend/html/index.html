@@ -1,18 +1,16 @@
-{% extends   "header.html" %}
-
-{% block page_content %}
+{% extends "header.html" %} {% block page_content %}
 
 <script>
-    function update_competitions_table(){
-                $.get("/competition/existing", function(data, status){
-                    for(index = 0; index < data["competitions"].length; index++){
-                        name = data["competitions"][index]
-                        $("#competitions_table")
-                            .append($("<tr></tr>"))
-                            .append("<th>" + name + "</th>")
-                    }
-                });
+    function update_competitions_table() {
+        $.get("/competition/existing", function(data, status) {
+            for (index = 0; index < data["competitions"].length; index++) {
+                name = data["competitions"][index]
+                $("#competitions_table")
+                    .append($("<tr></tr>"))
+                    .append("<th>" + name + "</th>")
             }
+        });
+    }
 
     update_competitions_table()
 </script>

@@ -1,9 +1,10 @@
 
 class Archer:
-    def __init__(self, name: str, bow_type: str, archer_class: str):
+    def __init__(self, name: str, bow_type: str, archer_class: str, club: str):
         self.name = name
         self.bow_type = bow_type
         self.archer_class = archer_class
+        self.club = club
         self.total_score = None
         self.__scores =[]
 
@@ -13,6 +14,7 @@ class Archer:
         archer["name"] = self.name
         archer["bow"] = self.bow_type
         archer["class"] = self.archer_class
+        archer["club"] = self.club
         archer["scores"] = self.__scores
         archer["total_score"] = self.get_total_score()
 

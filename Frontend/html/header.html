@@ -9,6 +9,9 @@
         <script src="/static/js/materialize.js"></script>
 
         <script>
+            var new_competition_modal;
+
+
             function replace_query_param(param, newval, search) {
                 var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
                 var query = search.replace(regex, "$1").replace(/&$/, '');
@@ -43,25 +46,60 @@
                 });
             }
 
+            function create_competition() {
+                var data = {};
+
+                data["name"] = $("#new_competition_name").val()
+                data["date"] = $("#new_competition_date").val()
+                data["description"] = $("#new_competition_description").val()
+
+                $.ajax({
+                    type: "POST",
+                    url: "/competition/new",
+                    data: JSON.stringify(data),
+                    contentType: 'application/json;charset=UTF-8',
+                    success: function(data, status, request_object) {
+                        M.toast({
+                            html: "Added competition " + name
+                        });
+
+                        update_competitions_dropdown();
+                        set_active_competition($("#new_competition_name").val());
+
+                        M.Modal.getInstance(new_competition_modal).close();
+
+                        $("#new_competition_name").val("")
+                        $("#new_competition_date").val("")
+                        $("#new_competition_description").val("")
+
+                    },
+                })
+            }
+
             $(document).ready(function() {
                 $('.sidenav').sidenav();
                 $(".dropdown_trigger").dropdown();
-                $('.modal').modal();
+                new_competition_modal = $('.modal').modal();
                 update_competitions_dropdown();
 
-                selected_competition = get_url_param("competition");
+                try {
+                    selected_competition = get_url_param("competition");
 
-                if (selected_competition) {
-                    $("#competitions_dropdown_nav_entry").text(selected_competition);
-                    $("#new").attr("href", "/new_competition/?competition=" + selected_competition)
-                    $("#save").click(function() {
-                        $.get("/competition/" + selected_competition + "/save");
-                        M.toast({
-                            html: "Saved competition!"
-                        })
-                    });
-                    $("#edit").attr("href", "/edit_competition/?competition=" + selected_competition)
-                    $("#scoring").attr("href", "/scoring/?competition=" + selected_competition)
+                    if (selected_competition) {
+                        $("#competitions_dropdown_nav_entry").text(selected_competition);
+                        $("#new").attr("href", "/new_competition/?competition=" + selected_competition)
+                        $("#save").click(function() {
+                            $.get("/competition/" + selected_competition + "/save");
+                            M.toast({
+                                html: "Saved competition!"
+                            })
+                        });
+                        $("#edit").attr("href", "/edit_competition/?competition=" + selected_competition)
+                        $("#archers").attr("href", "/archers/?competition=" + selected_competition)
+                        $("#scoring").attr("href", "/scoring/?competition=" + selected_competition)
+                    }
+                } catch (exc) {
+
                 }
             });
         </script>
@@ -77,6 +115,7 @@
                 <ul class="right valign-wrapper">
                     <li><a id="edit" href="/edit_competition">Settings</a></li>
                     <li><a class="dropdown_trigger" data-target="competitions_dropdown" id="competitions_dropdown_nav_entry">Competitions<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a id="archers" href="/archers">Archers</a></li>
                     <li><a id="scoring" href="/scoring">Scoring<i class="material-icons right">edit</i></a></li>
                     <li><a class="modal-trigger" href="#new_competition_modal">New<i class="material-icons right">add</i></a></li>
                     <li><a id="save">Save<i class="material-icons right">save</i></a></li>
@@ -93,7 +132,7 @@
                         <label for="new_competition_name">Competitiion Name</label>
                     </div>
                     <div class="col s4">
-                        <input  type="date" id="new_competition_date" class="datepicker">
+                        <input type="date" id="new_competition_date" class="datepicker">
                         <label for="new_competition_date">Date</label>
                     </div>
                 </div>
@@ -104,7 +143,7 @@
                 <button class="btn waves-effect waves-light" type="button" onclick="create_competition();">Create
                     <i class="material-icons right">add</i>
                 </button>
-            </div>          
+            </div>
         </div>
 
 

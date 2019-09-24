@@ -28,13 +28,14 @@ class Competition:
     def set_name(self, name: str):
         self.name = name
 
-    def add_archer(self, name: str, bow_type: str, archer_class: str):
+    def add_archer(self, name: str, bow_type: str, archer_class: str, club: str):
         if name not in self.archers:
             if bow_type in self.bow_types:
                 if archer_class in self.archer_classes:
                     new_archer = Archer(name,
                                         bow_type,
-                                        archer_class)
+                                        archer_class,
+                                        club)
 
                     self.archers.append(new_archer)
                 else:
@@ -73,14 +74,24 @@ class Competition:
             log.warn("Class {0} does not exist!".format(name))
 
     def import_archers(self, archer_file: str):
-        with open(archer_file, "r") as file:
-            archers = json.load(file)
+        with open(archer_file, "r", encoding='utf-8') as file:
+            file = json.load(file)
+            archers = file["Archers"]
+            bow_types = file["Bows"]
+            archer_classes = file["Classes"]
             archer_count = 0
 
+            for bow in bow_types:
+                self.add_bow(bow_types[bow])
+
+            for archer_class in archer_classes:
+                self.add_class(archer_classes[archer_class])
+
             for archer in archers:
-                self.add_archer(archer["name"],
-                                archer["bow"],
-                                archer["class"])
+                self.add_archer(archers[archer]["name"],
+                                archers[archer]["bow"],
+                                archers[archer]["class"],
+                                archers[archer]["club"])
 
                 archer_count += 1
 
@@ -161,10 +172,10 @@ class Competition:
             archers = []
 
             for archer in config["archers"]:
-                print(config["archers"][archer])
                 archer_object = Archer( config["archers"][archer]["name"],
                                         config["archers"][archer]["bow"],
-                                        config["archers"][archer]["class"])
+                                        config["archers"][archer]["class"],
+                                        config["archers"][archer]["club"])
 
                 for score in config["archers"][archer]["scores"]:
                     archer_object.add_score(score)
