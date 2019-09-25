@@ -67,6 +67,11 @@ class Competition:
         else:
             log.warn("Class {0} already exists!".format(name))
 
+    def update_score(self, name: str, club: str, round_index: int, round_score: int):
+        for archer in self.archers:
+            if archer.name == name and archer.club == club:
+                archer.update_score(round_index, round_score)
+
     def remove_class(self, name: str):
         if name in self.archer_classes:
             self.archer_classes.remove(name)

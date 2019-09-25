@@ -21,7 +21,11 @@
         $.get("/competition/" + selected_competition + "/data", function(data, status) {
             $("#competition_name").val(selected_competition);
             $("#competition_description").val(data["description"]);
-            $("#competition_date").val(data["date"]);
+
+            console.log(data["date"])
+
+            M.Datepicker.getInstance($("#competition_date")).setDate(new Date(data["date"]));
+            $("#competition_date").val(data["date"])
 
             $('#bow_column > .auto_generated').remove();
             $('#class_column > .auto_generated').remove();
@@ -142,10 +146,7 @@
 
     $(document).ready(function() {
         load_data();
-        $('.datepicker').pickadate({
-            selectMonths: true,
-            selectYears: 15
-        });
+        $('#competition_date').datepicker();
     });
 </script>
 
@@ -157,7 +158,7 @@
                 <label for="competition_name">Competitiion Name</label>
                 <textarea placeholder="Description" id="competition_description" class="materialize-textarea"></textarea>
                 <label for="competition_description">Description</label>
-                <input type="date" id="competition_date" class="datepicker">
+                <input type="text" id="competition_date">
                 <label for="competition_date">Date</label>
             </div>
             <div class="col s2">

@@ -24,7 +24,16 @@ class Archer:
         self.__scores.append(score)
 
     def update_score(self, round_idx: int, score: int):
-        self.__scores[round_idx] = score
+        round_idx -= 1
+
+        try:
+            self.__scores[round_idx] = score
+        except:
+            for index in range(0, (round_idx + 1) - len(self.__scores)):
+                self.__scores.append(0)
+
+            self.__scores[round_idx] = score
+
 
     def get_total_score(self):
         total_score = 0

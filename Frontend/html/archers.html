@@ -1,0 +1,205 @@
+{% extends "header.html" %} {% block page_content %}
+
+<script>
+    function load_archers() {
+        $.ajax({
+            type: "GET",
+            url: "/competition/" + selected_competition + "/archers",
+            success: function(data, status, request_object) {
+                $(".archer_entrys").remove();
+
+                for (var it = 0; it < data["archers"].length; it++) {
+                    $("#new_archer").after(`<li class="row collection-item archer_entrys valign-wrapper" style="padding-top: 5px !important; padding-bottom: 5px !important;">
+                                                <p class="col s3" style="margin-top: 5px !important; margin-bottom: 5px !important;">${data["archers"][it].name}</p>
+                                                <p class="col s2" style="margin-top: 5px !important; margin-bottom: 5px !important;">${data["archers"][it].bow}</p>
+                                                <p class="col s2" style="margin-top: 5px !important; margin-bottom: 5px !important;">${data["archers"][it].class}</p>
+                                                <p class="col s3" style="margin-top: 5px !important; margin-bottom: 5px !important;">${data["archers"][it].club}</p>
+                                                <p class="col s1"></p>
+                                                <i class="material-icons col s1" onclick="remove_archer('${data["archers"][it].name}')" style="margin-top: 5px !important; margin-bottom: 5px !important;">clear</i>
+                                            </li>`);
+                }
+            },
+            error: function(data, status, request_object) {
+
+            }
+        });
+    }
+
+    function load_competition_data() {
+        $.get("/competition/" + selected_competition + "/data", function(data, status) {
+            for (let it = 0; it < data["bows"].length; it++) {
+                name = data["bows"][it]
+                $("#new_archer_bow").append("<option value='" + name + "' selected>" + name + "</option>");
+            }
+
+            for (let it = 0; it < data["classes"].length; it++) {
+                name = data["classes"][it]
+                $("#new_archer_class").append("<option value='" + name + "' selected>" + name + "</option>");
+            }
+
+            $('select').formSelect();
+        });
+    }
+
+    function add_new_archer() {
+        var data = {};
+
+        data["name"] = $("#new_archer_name").val()
+        data["bow"] = $("#new_archer_bow").val()
+        data["class"] = $("#new_archer_class").val()
+        data["club"] = $("#new_archer_club").val()
+
+        $.ajax({
+            type: "POST",
+            url: "/competition/" + get_url_param("competition") + "/add_archer",
+            data: JSON.stringify(data),
+            contentType: 'application/json;charset=UTF-8',
+            success: function(data, status, request_object) {
+                M.toast({
+                    html: "Added archer!"
+                });
+                load_archers();
+            },
+            error: function(data, status, request_object) {
+                M.toast({
+                    html: "Error while adding archer!"
+                });
+            }
+        });
+    }
+
+    function remove_archer(name) {
+        $.ajax({
+            type: "POST",
+            url: "/competition/" + selected_competition + "/remove_archer",
+            data: JSON.stringify({
+                archer: name
+            }),
+            contentType: 'application/json;charset=UTF-8',
+            success: function(data, status, request_object) {
+                M.toast({
+                    html: "removed archer!"
+                });
+                load_archers();
+            },
+            error: function(data, status, request_object) {
+                M.toast({
+                    html: "Error while removing archer!"
+                });
+            }
+        });
+    }
+
+    function import_archers() {
+        import_modal = M.Modal.getInstance($('#archer_import_modal').modal());
+        import_modal.open();
+    }
+
+    function upload_archers_file() {
+        var file_data = $("#archers_import_file").prop("files")[0];
+        var form_data = new FormData();
+        form_data.append("file", file_data);
+
+        $.ajax({
+            url: "/competition/" + get_url_param("competition") + "/import_archers",
+            dataType: 'script',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function(data) {
+                M.toast({
+                    html: "Successfully uploaded file!"
+                });
+
+                import_modal = M.Modal.getInstance($('#archer_import_modal').modal());
+                import_modal.close();
+                load_archers();
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        $('select').formSelect();
+        load_competition_data();
+        load_archers();
+    });
+</script>
+
+<div id="archer_import_modal" class="modal">
+    <div class="modal-content">
+        <p>Upload a .json file which contain all informations about the archers</p>
+    </div>
+    <div class="modal-footer">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>File</span>
+                <input type="file" id="archers_import_file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+            <button class="btn waves-effect waves-light col s1 file-path validate left" type="button" onclick="upload_archers_file();">Import
+                    <i class="material-icons right">cloud_upload</i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="white row">
+    <nav>
+        <div class="nav-wrapper" style="background-color: white !important; color: grey !important">
+            <form>
+                <div class="input-field">
+                    <input id="search_bar" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons" style="color: grey !important;">search</i></label>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div>
+        <ul class="collection with-header">
+            <li class="collection-header">
+                <div class="row">
+                    <p class="col s3">Name</p>
+                    <p class="col s2">Bow</p>
+                    <p class="col s2">Class</p>
+                    <p class="col s3">Club</p>
+                    <p class="col s1"></p>
+                    <button class="btn waves-effect waves-light col s1 file-path validate" type="button" onclick="import_archers();">Import
+                            <i class="material-icons right">add</i>
+                    </button>
+                </div>
+            </li>
+            <li id="new_archer" class="collection-item">
+                <div class="row valign-wrapper">
+                    <input type="text" id="new_archer_name" class="col s3" placeholder="Name">
+
+                    <div class="col s2">
+                        <select id="new_archer_bow" class="col s2">
+                            <option value="" disabled selected>Bow</option>   
+                        </select>
+                    </div>
+
+                    <div class="col s2">
+                        <select id="new_archer_class" class="col s2">
+                            <option value="" disabled selected>Class</option>   
+                        </select>
+                    </div>
+
+                    <input type="text" id="new_archer_club" class="col s3" placeholder="Club">
+
+                    <p class="col s1"></p>
+
+                    <button class="btn waves-effect waves-light col s1" type="button" onclick="add_new_archer();" style="margin: 5px !important">Add
+                            <i class="material-icons right">add</i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

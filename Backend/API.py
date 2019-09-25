@@ -22,13 +22,15 @@ class API:
             ["/competition/<string:competition_name>/save", "save_competition", self.save_competition, ["GET"]],
             ["/competition/<string:competition_name>/import_archers", "import_archers", self.import_archers, ["GET"]],
             ["/competition/<string:competition_name>/archers", "get_archers", self.get_archers, ["GET"]],
+            ["/competition/<string:competition_name>/sorted_archers", "get_sorted_archers", self.get_sorted_archers, ["GET"]],
             ["/competition/<string:competition_name>/add_archer", "add_archer", self.add_archer, ["POST"]],
             ["/competition/<string:competition_name>/import_archers", "import_archers", self.import_archers, ["POST"]],
             ["/competition/<string:competition_name>/remove_archer", "remove_archer", self.remove_archer, ["POST"]],
             ["/competition/<string:competition_name>/add_bow", "add_bow_type", self.add_bow_type, ["POST"]],
             ["/competition/<string:competition_name>/remove_bow", "remove_bow_type", self.remove_bow_type, ["POST"]],
             ["/competition/<string:competition_name>/add_class", "add_class", self.add_class, ["POST"]],
-            ["/competition/<string:competition_name>/remove_class", "remove_class", self.remove_class, ["POST"]]
+            ["/competition/<string:competition_name>/remove_class", "remove_class", self.remove_class, ["POST"]],
+            ["/competition/<string:competition_name>/update_score", "update_score", self.update_score, ["POST"]],
         ]
 
         for endpoint in self.url_endpoints:
@@ -78,6 +80,7 @@ class API:
         if competition_name in self.competitions:
             return jsonify({
                 "description": self.competitions[competition_name].description,
+                "date": self.competitions[competition_name].date,
                 "bows": self.competitions[competition_name].bow_types,
                 "classes": self.competitions[competition_name].archer_classes
             })
@@ -172,6 +175,11 @@ class API:
                     "archers": archers_list
                     })
 
+    def get_sorted_archers(self, competition_name: str):
+        if request.method == "GET":
+            if competition_name in self.competitions:
+                return self.competitions[competition_name].to_sorted_dict()
+
     def add_archer(self, competition_name: str):
         if competition_name in self.competitions:
             request_data = request.get_json()
@@ -210,6 +218,19 @@ class API:
             return jsonify({
                 "status": "SUCCESS"
             })
+
+    def update_score(self, competition_name: str):
+        if request.method == "POST":
+            if competition_name in self.competitions:
+                request_data = request.get_json()["data"]
+                print(request_data)
+
+                self.competitions[competition_name].update_score(request_data["name"],
+                                                                 request_data["club"],
+                                                                 int(request_data["round_index"]),
+                                                                 int(request_data["round_score"]),)
+
+                return jsonify(self.competitions[competition_name].to_sorted_dict())
 
 
     def add_bow_type(self, competition_name: str):
