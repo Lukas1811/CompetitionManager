@@ -178,7 +178,8 @@ class API:
     def get_sorted_archers(self, competition_name: str):
         if request.method == "GET":
             if competition_name in self.competitions:
-                return self.competitions[competition_name].to_sorted_dict()
+                print("test")
+                return jsonify(self.competitions[competition_name].to_sorted_dict())
 
     def add_archer(self, competition_name: str):
         if competition_name in self.competitions:

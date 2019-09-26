@@ -1,0 +1,751 @@
+{
+  "Archers" : {
+    "-LX8Xug10fbFahK1Afig" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "WTS-Freiburg",
+      "date" : "26.1.2019, 10:44:20",
+      "email" : "willikunz1@aol.com",
+      "name" : "Willi Kunz"
+    },
+    "-LXLjpzm1xbguyxn005p" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "BJC Sexau",
+      "date" : "29.1.2019, 00:15:50",
+      "email" : "Heiko.diesslin@gmail.com",
+      "name" : "Diesslin Heiko"
+    },
+    "-LXLk-N2_PQIdeN1Mvkp" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Jugend(bis 16)",
+      "club" : "BJC Sexau",
+      "date" : "29.1.2019, 00:16:33",
+      "email" : "Heiko.diesslin@gmail.com",
+      "name" : "Diesslin Celine"
+    },
+    "-LXLk70F6nub61dJRcbE" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "BJC Sexau",
+      "date" : "29.1.2019, 00:17:04",
+      "email" : "Heiko.diesslin@gmail.com",
+      "name" : "Daniel Treffeisen"
+    },
+    "-LXcRVOmzFgtVhndtaMN" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "BFW",
+      "date" : "1.2.2019, 10:44:30",
+      "email" : "oliiris@web.de",
+      "name" : "Oliver Schmalhoff"
+    },
+    "-LXcR_pPQWHESdOyU1Hf" : {
+      "bow" : "Compound",
+      "class" : "Jugend(bis 16)",
+      "club" : "BFW",
+      "date" : "1.2.2019, 10:44:53",
+      "email" : "oliiris@web.de",
+      "name" : "Connor Schmlahoff"
+    },
+    "-LXcRh-wQeVWEnPTJYk_" : {
+      "bow" : "Langbogen",
+      "class" : "Damen",
+      "club" : "BFW",
+      "date" : "1.2.2019, 10:45:22",
+      "email" : "oliiris@web.de",
+      "name" : "Iris Schmalhoff"
+    },
+    "-LYSeIKbqMw_M1KclyYH" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "WTS Freiburg",
+      "date" : "11.2.2019, 18:44:49",
+      "email" : "werner_hartung@web.de",
+      "name" : "Werner Hartung"
+    },
+    "-LZ4gx426lHwHfBceqFz" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "Falkenholz-Bogendesign",
+      "date" : "19.2.2019, 13:21:04",
+      "email" : "info@cannonballtravel.de",
+      "name" : "Thomas Merkel"
+    },
+    "-L_b_IgwJyMWTxUjTr79" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "SV Ihringen",
+      "date" : "10.3.2019, 13:30:27",
+      "email" : "lapree@gmx.de",
+      "name" : "Bianka Laprée"
+    },
+    "-Lbw6TTyXKkKu_faN2Q8" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "FB Schmieheim",
+      "date" : "8.4.2019, 10:43:32",
+      "email" : "Admiral68@aol.com",
+      "name" : "Peter Grießenauer "
+    },
+    "-Lbw6n3MppPHe0fAmrjs" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "FB Schmieheim",
+      "date" : "8.4.2019, 10:44:56",
+      "email" : "Admiral68@aol.com",
+      "name" : "Andrea Hummel"
+    },
+    "-Lbw7AagFSeVZT3XuNAL" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "FB Schmieheim",
+      "date" : "8.4.2019, 10:46:37",
+      "email" : "Admiral68@aol.com",
+      "name" : "Wolfgang Hassler"
+    },
+    "-LcRNPdGr7VCx25O8s9V" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "Freiburg St. Georgen",
+      "date" : "14.4.2019, 17:05:20",
+      "email" : "gsbdreier@web.de",
+      "name" : "Harald Dreier"
+    },
+    "-LcRNcgsGfLSshlKbw7E" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "Freiburg St. Georgen",
+      "date" : "14.4.2019, 17:06:17",
+      "email" : "gsbdreier@web.de",
+      "name" : "Petra Trunte"
+    },
+    "-Lcx3kNQNjCA7My5w5k1" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "FBS Schmieheim",
+      "date" : "21.4.2019, 01:27:05",
+      "email" : "a.kunzer@t-online.de",
+      "name" : "Armin Kunzer                              Primitivbogen ist nicht zu auswahl"
+    },
+    "-Ld5aQDe1FuB2uRM2LCL" : {
+      "bow" : "Langbogen",
+      "class" : "Damen",
+      "club" : "SGi Denzlingen",
+      "date" : "‎22‎.‎04‎.‎2019‎ ‎21‎:‎50‎:‎38",
+      "email" : "meyer.heidrun@web.de",
+      "name" : "Meyer, Heidrun"
+    },
+    "-Ld5aY3jUUNiJWN8OCT3" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "SGi Denzlingen",
+      "date" : "‎22‎.‎04‎.‎2019‎ ‎21‎:‎51‎:‎10",
+      "email" : "meyer.heidrun@web.de",
+      "name" : "Meyer, Silas"
+    },
+    "-LdeFoZpVboACAd_WCIf" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "LongBowTeam Minseln",
+      "date" : "4/29/2019, 8:02:35 PM",
+      "email" : "hafink002@hotmail.com",
+      "name" : "Fink,Hans-Jörg"
+    },
+    "-LdeFz8EpuMnpHO2Km1m" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "LongBowTeam Minseln",
+      "date" : "4/29/2019, 8:03:19 PM",
+      "email" : "wallabie1@gmx.de",
+      "name" : "Fink ,Heike"
+    },
+    "-LeBslrLbooo2obmxUOq" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "FBS Schmieheim",
+      "date" : "6.5.2019, 13:24:32",
+      "email" : "alermame@gmail.com",
+      "name" : "Alexander Resch, 77972 Mahlberg"
+    },
+    "-LfKGxvwvyatOG3ohxqd" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "BSFD Schallbach e.V. 2010",
+      "date" : "20.5.2019, 14:46:58",
+      "email" : "stephan.jennrich@gmail.com",
+      "name" : "Stephan Jennrich"
+    },
+    "-LfKH9BQxKhqG0LyiKfY" : {
+      "bow" : "Compound",
+      "class" : "Jugend(bis 16)",
+      "club" : "BSFD Schallbach e.V. 2010",
+      "date" : "20.5.2019, 14:47:48",
+      "email" : "stephan.jennrich@gmail.com",
+      "name" : "Joel Luis Jennrich"
+    },
+    "-LftAZLJ707HvMA8eWn8" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "X",
+      "date" : "27.5.2019, 14:05:37",
+      "email" : "sailer.marlies@t-online.de",
+      "name" : "Marlies Sailer"
+    },
+    "-LftApLkE-j0fwaoVctn" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "X",
+      "date" : "27.5.2019, 14:06:47",
+      "email" : "sailer.marlies@t-online.de",
+      "name" : "Reimund Sailer"
+    },
+    "-Lfxi2SOADRZqi_JepWC" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "SG Freiburg",
+      "date" : "28.5.2019, 11:14:27",
+      "email" : "wolf.hanselmann@t-online.de",
+      "name" : "Wolf Hanselmann"
+    },
+    "-Lg-CEgbsz37L6rekHgD" : {
+      "bow" : "Langbogen",
+      "class" : "Damen",
+      "club" : "Kein ",
+      "date" : "28.5.2019, 22:50:00",
+      "email" : "Schneider45@web.de",
+      "name" : "Schneider Michaela "
+    },
+    "-Lg-CUyoM23v3IFleV4a" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "Kein",
+      "date" : "28.5.2019, 22:51:07",
+      "email" : "Schneider45@web.de",
+      "name" : "Andre Steger"
+    },
+    "-Lg6Lk3kz67CAxD5-L9N" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "BSF Wyhl",
+      "date" : "30.5.2019, 08:09:13",
+      "email" : "alfred-schwoerer@t-online.de",
+      "name" : "Alfred Schwörer"
+    },
+    "-Lh0P9m8yoAoTDqBFkZO" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "WTS Freiburg",
+      "date" : "10.6.2019, 14:41:48",
+      "email" : "marc-schneider@t-online.de",
+      "name" : "Marc Schneider"
+    },
+    "-LhW7XgRaQjJeRKYE29n" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen",
+      "date" : "16.6.2019, 18:32:38",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Brunner, Thomas"
+    },
+    "-LhW7lwq86A3U2SaTAfl" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Jugend(bis 16)",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:33:41",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Brunner, Carolin"
+    },
+    "-LhW7uQSYavbXJX7jJqz" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Jugend(bis 16)",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:34:16",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Krane, Alina"
+    },
+    "-LhW84Ox1fLDkLZkN4w2" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:35:01",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Krane, Markus"
+    },
+    "-LhW8DGR67CKJDCsM3K6" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:35:37",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Traxel, Matthias"
+    },
+    "-LhW8NWcvWsVP-Kiv8pE" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:36:19",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Traxel, Silvan"
+    },
+    "-LhW8XRx7fn1_UDn02_T" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:37:00",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Behnke, Lothar"
+    },
+    "-LhW8i5O1EHBjxg53yYV" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:37:47",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Oese, Martin"
+    },
+    "-LhW8rKpaJXXhbUqtiAC" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:38:25",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Weber, Rene"
+    },
+    "-LhW8y_WL4ws7-XTmyit" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:38:55",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Kubach, Sven"
+    },
+    "-LhW9Te5IqErqTqRQZQz" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:41:06",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Findling, Sascha"
+    },
+    "-LhW9gSfF8RUiGebNgZF" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Jugend(bis 16)",
+      "club" : "SV Schlächtenhaus-Hofen ",
+      "date" : "16.6.2019, 18:42:03",
+      "email" : "dorett.s@arcor.de",
+      "name" : "Panek, Sophie"
+    },
+    "-LhjgajSCstJxzUJ-9SP" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "LBT Minseln",
+      "date" : "19.6.2019, 14:24:52",
+      "email" : "romodom@t-online.de",
+      "name" : "Roland Domschat"
+    },
+    "-LjgN3sQvW6LPsbc_4-X" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "kein",
+      "date" : "13.7.2019, 19:27:45",
+      "email" : "f.p.frommi@online.de",
+      "name" : "Frank Frommherz"
+    },
+    "-LjgNAuYjNeKlGYvdQls" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "kein",
+      "date" : "13.7.2019, 19:28:14",
+      "email" : "f.p.frommi@online.de",
+      "name" : "Petra Frommherz"
+    },
+    "-LjsoOr8dQhmeA4M_Y7x" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "Biber-Bogenschützen",
+      "date" : "16.7.2019, 05:26:54",
+      "email" : "kp.hoerr@bangert-hoerr.de",
+      "name" : "Klaus-Peter Hörr"
+    },
+    "-LjwNZ3mMmsgsjOEy6I2" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "BSC Emmendingen",
+      "date" : "16.7.2019, 22:03:45",
+      "email" : "patrik@norfok.com",
+      "name" : "Schill  Patrik"
+    },
+    "-LkNWQNJl9T8J6pkMGQX" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "WTS Freiburg",
+      "date" : "22.7.2019, 09:11:46",
+      "email" : "es-schneider@t-online.de",
+      "name" : "Eva Schneider"
+    },
+    "-LkNWZnoD4QEKZGWKdOK" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "WTS Freiburg",
+      "date" : "22.7.2019, 09:12:25",
+      "email" : "es-schneider@t-online.de",
+      "name" : "Klaus Schneider"
+    },
+    "-Lks2ymb9BtiYS5hJEOX" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "ohne",
+      "date" : "‎28‎.‎07‎.‎2019‎ ‎12‎:‎13‎:‎55",
+      "email" : "r.moesinger@gmx.de",
+      "name" : "Ralf Mösinger"
+    },
+    "-Lks3PRpZ-rjCkESEyr3" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "SV Weiler Höri",
+      "date" : "‎28‎.‎07‎.‎2019‎ ‎12‎:‎15‎:‎49",
+      "email" : "ulrikekoehl@gmx.de",
+      "name" : "Ulrike Köhl "
+    },
+    "-Ll8OBkwKIJjK8q_X_49" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SSG Hohberg",
+      "date" : "31.7.2019, 20:57:24",
+      "email" : "gerold.seidel@kabelbw.de",
+      "name" : "Gerold Seidel"
+    },
+    "-Ll8OxYAQ8wL_WI64WdS" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "SSG Hohberg",
+      "date" : "31.7.2019, 21:00:44",
+      "email" : "gerold.seidel@kabelbw.de",
+      "name" : "Gerhardt Maier"
+    },
+    "-LlCBox5gn9u4sg2hqP4" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SSG Hohberg",
+      "date" : "1.8.2019, 14:41:43",
+      "email" : "swseidel@t-online.de",
+      "name" : "Wolfgang Seidel"
+    },
+    "-LlLfPH0YBbfzrHXFbMr" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "Bogensportfreunde Hotzenwald",
+      "date" : "3.8.2019, 10:51:55",
+      "email" : "dieter.molitor@online.de",
+      "name" : "Dieter Molitor"
+    },
+    "-LlLfVlRkOg9aPs5weKV" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "Bogensportfreunde Hotzenwald",
+      "date" : "3.8.2019, 10:52:22",
+      "email" : "dieter.molitor@online.de",
+      "name" : "Wilhelm, Theo"
+    },
+    "-LlLfcnrAGWrqsTkqr_l" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "Bogensportfreunde Hotzenwald",
+      "date" : "3.8.2019, 10:52:55",
+      "email" : "dieter.molitor@online.de",
+      "name" : "Wilhelm, Inge"
+    },
+    "-LlLfhyKHnEey1Mcl28i" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "Bogensportfreunde Hotzenwald",
+      "date" : "3.8.2019, 10:53:16",
+      "email" : "dieter.molitor@online.de",
+      "name" : "Rudigier, Michael"
+    },
+    "-LlWC7t7YhS62SPwTnep" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "GBC Schützenverein Appenweier",
+      "date" : "5.8.2019, 11:55:29",
+      "email" : "Nicolaigonzales@gmail.com ",
+      "name" : "Nicolai Schneider"
+    },
+    "-Llf7y_qxOQhT-dgfyBG" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "SSG Hohberg",
+      "date" : "‎07‎.‎08‎.‎2019‎ ‎10‎:‎15‎:‎17",
+      "email" : "mvg@kabelbw.de",
+      "name" : "Michael von Gostomski"
+    },
+    "-LlhMIzOkT30aGRn_G_h" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "SSG Hohberg",
+      "date" : "‎07‎.‎08‎.‎2019‎ ‎20‎:‎37‎:‎09",
+      "email" : "mvg@kabelbw.de",
+      "name" : "Carolin von Gostomski"
+    },
+    "-LlvD33Bo7LQ8ZaY15mg" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "WTS Freiburg ",
+      "date" : "10.8.2019, 13:09:41",
+      "email" : "Dbbergner@gmail.com",
+      "name" : "Dirk Bergner"
+    },
+    "-Lma50vRsJzm56F2fPND" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "WTS Freiburg",
+      "date" : "18.8.2019, 20:58:44",
+      "email" : "angelika.voegele@googlemail.com",
+      "name" : "Angelika Vögele"
+    },
+    "-LmpM3vKAO8-qBzbEpY-" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "Team Bogensport Adventure ",
+      "date" : "21.8.2019, 20:07:01",
+      "email" : "r.st@orca-sportfotos.de",
+      "name" : "Ralf Stehning "
+    },
+    "-LnMDxr0jCMbVKeHe_dN" : {
+      "bow" : "Recurvebogen(visiert)",
+      "class" : "Herrren",
+      "club" : "BSC herbolzheim",
+      "date" : "28.8.2019, 09:58:40",
+      "email" : "Jaeckel-clan@t-online.de",
+      "name" : "Jäckel"
+    },
+    "-LnMulusix3EuquSKJNg" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Jugend(bis 16)",
+      "club" : "BSC Herbolzheim",
+      "date" : "28.8.2019, 13:10:03",
+      "email" : "maria_hmmerle@yahoo.de",
+      "name" : "Jonas Hämmerle"
+    },
+    "-LnOiHn8X0_3V8FpxBLO" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "BSC Herbolzheim",
+      "date" : "28.8.2019, 21:34:58",
+      "email" : "seipp.family@t-online.de",
+      "name" : "Eberhard Seipp, Schnellbruckstr. 11, 79341 Kenzingen"
+    },
+    "-LoC7DMyX4YFWuMUbAYT" : {
+      "bow" : "Langbogen",
+      "class" : "Herrren",
+      "club" : "BSFD Schallbach",
+      "date" : "9/7/2019, 9:08:42 PM",
+      "email" : "juergen.haessler@web.de ",
+      "name" : "Jürgen Häßler"
+    },
+    "-LoMRhB6BnJz3nDyDheS" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "BSG Riegel ",
+      "date" : "9.9.2019, 21:14:24",
+      "email" : "periron@t-online.de",
+      "name" : "Sandra Griesser"
+    },
+    "-LoMRrJhg6GmBRuXhxan" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "BSG Riegel",
+      "date" : "9.9.2019, 21:15:05",
+      "email" : "periron@t-online.de",
+      "name" : "Sandra Gross"
+    },
+    "-LoMS-em8BvoqewsO5Hk" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "BSG Riegel ",
+      "date" : "9.9.2019, 21:15:44",
+      "email" : "periron@t-online.de",
+      "name" : "Ilse Duschek "
+    },
+    "-LoMS7NzWhbZVqitulV8" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "BSG Riegel ",
+      "date" : "9.9.2019, 21:16:15",
+      "email" : "periron@t-online.de",
+      "name" : "Michael Becker"
+    },
+    "-LoMSBnOwrotgiJUnDh3" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "BSG Riegel ",
+      "date" : "9.9.2019, 21:16:33",
+      "email" : "periron@t-online.de",
+      "name" : "Peter Duschek"
+    },
+    "-LoRWc-RdTXnh6DSHe3A" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "BSFD Schallbach 2010 e.V.",
+      "date" : "10.9.2019, 20:53:59",
+      "email" : "stephan.jennrich@gmail.com",
+      "name" : "Stephan Jennrich"
+    },
+    "-LoRWk4MbPMTLbI3wvRB" : {
+      "bow" : "Compound",
+      "class" : "Jugend(bis 16)",
+      "club" : "BSFD Schallbach 2010 e.V.",
+      "date" : "10.9.2019, 20:54:32",
+      "email" : "stephan.jennrich@gmail.com",
+      "name" : "Joel Luis Jennrich"
+    },
+    "-LoRYBLiRPpRhtwxeO_F" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "BSFD Schallbach",
+      "date" : "10.9.2019, 21:00:49",
+      "email" : "heiss.klaus@t-online.de",
+      "name" : "Klaus Heiß"
+    },
+    "-LoRYU_iC3lH2PwF5O9w" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "BSFD Schallbach",
+      "date" : "10.9.2019, 21:02:08",
+      "email" : "mirjam.weissenfeld@vodafone.de",
+      "name" : "Mirjam Weissenfeld"
+    },
+    "-LoU3YWZT5SREKvjUgkO" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "ATAKE",
+      "date" : "11.9.2019, 08:45:50",
+      "email" : "heiko.diesslin@gmail.com",
+      "name" : "Heiko Diesslin"
+    },
+    "-LoU3fgngfCDhzockCqJ" : {
+      "bow" : "Compound",
+      "class" : "Jugend(bis 16)",
+      "club" : "ATAKE",
+      "date" : "11.9.2019, 08:46:24",
+      "email" : "heiko.diesslin@gmail.com",
+      "name" : "Celine Diesslin"
+    },
+    "-LoqZ1HwpIW-p19Vsf-a" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "Bogenparcours Club Sexau",
+      "date" : "15.9.2019, 22:14:39",
+      "email" : "michael.massow@outlook.com",
+      "name" : "Michael Massow"
+    },
+    "-LoqZIYf1Cd24pcCBHiG" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Damen",
+      "club" : "Bogenparcours Club Sexau",
+      "date" : "15.9.2019, 22:15:50",
+      "email" : "Janinaernst@yahoo.de",
+      "name" : "Janina Ernst"
+    },
+    "-LoqZpSIXJazc4ZHmIvi" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "WTS Freiburg ",
+      "date" : "15.9.2019, 22:18:09",
+      "email" : "r-wiesner@web.de",
+      "name" : "Wiesner Rainer"
+    },
+    "-LouAk3ooY4vqDoutN0t" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "Teningen",
+      "date" : "16.9.2019, 15:07:00",
+      "email" : "Highlander5001@gmx.net ",
+      "name" : "Willmann Horst"
+    },
+    "-LovT5NqQ9HpAWOkuOas" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "Teningen ",
+      "date" : "16.9.2019, 21:06:47",
+      "email" : "Highlander5001@gmx.net ",
+      "name" : "Geschwander August"
+    },
+    "-Low1kKPU5dQtwQgBHGr" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "Atake",
+      "date" : "16.9.2019, 23:46:58",
+      "email" : "Heiko.diesslin@gmail.com",
+      "name" : "Diesslin Heiko"
+    },
+    "-Low1vrZ2Vu_zLLduYWf" : {
+      "bow" : "Compound",
+      "class" : "Jugend(bis 16)",
+      "club" : "Atake",
+      "date" : "16.9.2019, 23:47:45",
+      "email" : "Heiko.diesslin@gmail.com",
+      "name" : "Diesslin Celine"
+    },
+    "-LoyXRRhNV9qtPtyNX52" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "WTS Freiburg ",
+      "date" : "17.9.2019, 11:24:40",
+      "email" : "r-wiesner@web.de",
+      "name" : "Wiesner Rainer"
+    },
+    "-LoyorrACxwOw3Or91ZJ" : {
+      "bow" : "Recurvebogen(unvisiert)",
+      "class" : "Herrren",
+      "club" : "WTF",
+      "date" : "17.9.2019, 12:45:10",
+      "email" : "treffeisen@gmx.de",
+      "name" : "Treffeisen Daniel"
+    },
+    "-LpEpt221Rvk47lM2CGy" : {
+      "bow" : "Recurvebogen(visiert)",
+      "class" : "Jugend(bis 16)",
+      "club" : "BSC Herbolzheim",
+      "date" : "20.9.2019, 20:03:08",
+      "email" : "hornibox@freenet.de",
+      "name" : "Urs Horn"
+    },
+    "-LpSRa6Z-Jpc7_-f6tfZ" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "Bernstein Eagles Michelbach",
+      "date" : "23.9.2019, 11:27:16",
+      "email" : "ass-kraemer@gmail.com",
+      "name" : "Kai Krämer"
+    },
+    "-LpXhgSK3P1OFbuqcntJ" : {
+      "bow" : "Compound",
+      "class" : "Damen",
+      "club" : "Teningen",
+      "date" : "24.9.2019, 12:00:06",
+      "email" : "Highlander5001@gmx.net ",
+      "name" : "Engemann Susane"
+    },
+    "-LpZJXx-pofo8ffn5stZ" : {
+      "bow" : "Compound",
+      "class" : "Herrren",
+      "club" : "SSV Widerhold",
+      "date" : "24.9.2019, 19:29:29",
+      "email" : "th-s-maier@t-online.de",
+      "name" : "Thomas Maier"
+    }
+  },
+  "Bows" : {
+    "Blankbogen" : "Recurvebogen(unvisiert)",
+    "Compound" : "Compound",
+    "Langbogen" : "Langbogen",
+    "Recurve" : "Recurvebogen(visiert)"
+  },
+  "Classes" : {
+    "Damen" : "Damen",
+    "Herren" : "Herrren",
+    "Jugend" : "Jugend(bis 16)"
+  }
+}

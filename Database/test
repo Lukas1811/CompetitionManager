@@ -1,0 +1,717 @@
+{
+    "name": "test",
+    "date": "2019-09-24",
+    "description": "Test competition",
+    "path": "./Database/test",
+    "bows": [
+        "Recurvebogen(unvisiert)",
+        "Compound",
+        "Langbogen",
+        "Recurvebogen(visiert)"
+    ],
+    "classes": [
+        "Damen",
+        "Herrren",
+        "Jugend(bis 16)"
+    ],
+    "archers": {
+        "Willi Kunz": {
+            "name": "Willi Kunz",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "WTS-Freiburg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Diesslin Heiko": {
+            "name": "Diesslin Heiko",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "Atake",
+            "scores": [],
+            "total_score": 0
+        },
+        "Diesslin Celine": {
+            "name": "Diesslin Celine",
+            "bow": "Compound",
+            "class": "Jugend(bis 16)",
+            "club": "Atake",
+            "scores": [],
+            "total_score": 0
+        },
+        "Daniel Treffeisen": {
+            "name": "Daniel Treffeisen",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "BJC Sexau",
+            "scores": [],
+            "total_score": 0
+        },
+        "Oliver Schmalhoff": {
+            "name": "Oliver Schmalhoff",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "BFW",
+            "scores": [],
+            "total_score": 0
+        },
+        "Connor Schmlahoff": {
+            "name": "Connor Schmlahoff",
+            "bow": "Compound",
+            "class": "Jugend(bis 16)",
+            "club": "BFW",
+            "scores": [],
+            "total_score": 0
+        },
+        "Iris Schmalhoff": {
+            "name": "Iris Schmalhoff",
+            "bow": "Langbogen",
+            "class": "Damen",
+            "club": "BFW",
+            "scores": [],
+            "total_score": 0
+        },
+        "Werner Hartung": {
+            "name": "Werner Hartung",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "WTS Freiburg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Thomas Merkel": {
+            "name": "Thomas Merkel",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "Falkenholz-Bogendesign",
+            "scores": [],
+            "total_score": 0
+        },
+        "Bianka Lapr\u00e9e": {
+            "name": "Bianka Lapr\u00e9e",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "SV Ihringen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Peter Grie\u00dfenauer ": {
+            "name": "Peter Grie\u00dfenauer ",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "FB Schmieheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Andrea Hummel": {
+            "name": "Andrea Hummel",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "FB Schmieheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Wolfgang Hassler": {
+            "name": "Wolfgang Hassler",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "FB Schmieheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Harald Dreier": {
+            "name": "Harald Dreier",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "Freiburg St. Georgen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Petra Trunte": {
+            "name": "Petra Trunte",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "Freiburg St. Georgen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Armin Kunzer                              Primitivbogen ist nicht zu auswahl": {
+            "name": "Armin Kunzer                              Primitivbogen ist nicht zu auswahl",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "FBS Schmieheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Meyer, Heidrun": {
+            "name": "Meyer, Heidrun",
+            "bow": "Langbogen",
+            "class": "Damen",
+            "club": "SGi Denzlingen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Meyer, Silas": {
+            "name": "Meyer, Silas",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "SGi Denzlingen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Fink,Hans-J\u00f6rg": {
+            "name": "Fink,Hans-J\u00f6rg",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "LongBowTeam Minseln",
+            "scores": [],
+            "total_score": 0
+        },
+        "Fink ,Heike": {
+            "name": "Fink ,Heike",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "LongBowTeam Minseln",
+            "scores": [],
+            "total_score": 0
+        },
+        "Alexander Resch, 77972 Mahlberg": {
+            "name": "Alexander Resch, 77972 Mahlberg",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "FBS Schmieheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Stephan Jennrich": {
+            "name": "Stephan Jennrich",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "BSFD Schallbach 2010 e.V.",
+            "scores": [],
+            "total_score": 0
+        },
+        "Joel Luis Jennrich": {
+            "name": "Joel Luis Jennrich",
+            "bow": "Compound",
+            "class": "Jugend(bis 16)",
+            "club": "BSFD Schallbach 2010 e.V.",
+            "scores": [],
+            "total_score": 0
+        },
+        "Marlies Sailer": {
+            "name": "Marlies Sailer",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "X",
+            "scores": [],
+            "total_score": 0
+        },
+        "Reimund Sailer": {
+            "name": "Reimund Sailer",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "X",
+            "scores": [],
+            "total_score": 0
+        },
+        "Wolf Hanselmann": {
+            "name": "Wolf Hanselmann",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "SG Freiburg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Schneider Michaela ": {
+            "name": "Schneider Michaela ",
+            "bow": "Langbogen",
+            "class": "Damen",
+            "club": "Kein ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Andre Steger": {
+            "name": "Andre Steger",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "Kein",
+            "scores": [],
+            "total_score": 0
+        },
+        "Alfred Schw\u00f6rer": {
+            "name": "Alfred Schw\u00f6rer",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "BSF Wyhl",
+            "scores": [],
+            "total_score": 0
+        },
+        "Marc Schneider": {
+            "name": "Marc Schneider",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "WTS Freiburg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Brunner, Thomas": {
+            "name": "Brunner, Thomas",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Brunner, Carolin": {
+            "name": "Brunner, Carolin",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Jugend(bis 16)",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Krane, Alina": {
+            "name": "Krane, Alina",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Jugend(bis 16)",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Krane, Markus": {
+            "name": "Krane, Markus",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Traxel, Matthias": {
+            "name": "Traxel, Matthias",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Traxel, Silvan": {
+            "name": "Traxel, Silvan",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Behnke, Lothar": {
+            "name": "Behnke, Lothar",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Oese, Martin": {
+            "name": "Oese, Martin",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Weber, Rene": {
+            "name": "Weber, Rene",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Kubach, Sven": {
+            "name": "Kubach, Sven",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Findling, Sascha": {
+            "name": "Findling, Sascha",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Panek, Sophie": {
+            "name": "Panek, Sophie",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Jugend(bis 16)",
+            "club": "SV Schl\u00e4chtenhaus-Hofen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Roland Domschat": {
+            "name": "Roland Domschat",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "LBT Minseln",
+            "scores": [],
+            "total_score": 0
+        },
+        "Frank Frommherz": {
+            "name": "Frank Frommherz",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "kein",
+            "scores": [],
+            "total_score": 0
+        },
+        "Petra Frommherz": {
+            "name": "Petra Frommherz",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "kein",
+            "scores": [],
+            "total_score": 0
+        },
+        "Klaus-Peter H\u00f6rr": {
+            "name": "Klaus-Peter H\u00f6rr",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "Biber-Bogensch\u00fctzen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Schill  Patrik": {
+            "name": "Schill  Patrik",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "BSC Emmendingen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Eva Schneider": {
+            "name": "Eva Schneider",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "WTS Freiburg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Klaus Schneider": {
+            "name": "Klaus Schneider",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "WTS Freiburg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Ralf M\u00f6singer": {
+            "name": "Ralf M\u00f6singer",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "ohne",
+            "scores": [],
+            "total_score": 0
+        },
+        "Ulrike K\u00f6hl ": {
+            "name": "Ulrike K\u00f6hl ",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "SV Weiler H\u00f6ri",
+            "scores": [],
+            "total_score": 0
+        },
+        "Gerold Seidel": {
+            "name": "Gerold Seidel",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SSG Hohberg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Gerhardt Maier": {
+            "name": "Gerhardt Maier",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "SSG Hohberg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Wolfgang Seidel": {
+            "name": "Wolfgang Seidel",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SSG Hohberg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Dieter Molitor": {
+            "name": "Dieter Molitor",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "Bogensportfreunde Hotzenwald",
+            "scores": [],
+            "total_score": 0
+        },
+        "Wilhelm, Theo": {
+            "name": "Wilhelm, Theo",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "Bogensportfreunde Hotzenwald",
+            "scores": [],
+            "total_score": 0
+        },
+        "Wilhelm, Inge": {
+            "name": "Wilhelm, Inge",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "Bogensportfreunde Hotzenwald",
+            "scores": [],
+            "total_score": 0
+        },
+        "Rudigier, Michael": {
+            "name": "Rudigier, Michael",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "Bogensportfreunde Hotzenwald",
+            "scores": [],
+            "total_score": 0
+        },
+        "Nicolai Schneider": {
+            "name": "Nicolai Schneider",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "GBC Sch\u00fctzenverein Appenweier",
+            "scores": [],
+            "total_score": 0
+        },
+        "Michael von Gostomski": {
+            "name": "Michael von Gostomski",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "SSG Hohberg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Carolin von Gostomski": {
+            "name": "Carolin von Gostomski",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "SSG Hohberg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Dirk Bergner": {
+            "name": "Dirk Bergner",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "WTS Freiburg ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Angelika V\u00f6gele": {
+            "name": "Angelika V\u00f6gele",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "WTS Freiburg",
+            "scores": [],
+            "total_score": 0
+        },
+        "Ralf Stehning ": {
+            "name": "Ralf Stehning ",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "Team Bogensport Adventure ",
+            "scores": [],
+            "total_score": 0
+        },
+        "J\u00e4ckel": {
+            "name": "J\u00e4ckel",
+            "bow": "Recurvebogen(visiert)",
+            "class": "Herrren",
+            "club": "BSC herbolzheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Jonas H\u00e4mmerle": {
+            "name": "Jonas H\u00e4mmerle",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Jugend(bis 16)",
+            "club": "BSC Herbolzheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Eberhard Seipp, Schnellbruckstr. 11, 79341 Kenzingen": {
+            "name": "Eberhard Seipp, Schnellbruckstr. 11, 79341 Kenzingen",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "BSC Herbolzheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "J\u00fcrgen H\u00e4\u00dfler": {
+            "name": "J\u00fcrgen H\u00e4\u00dfler",
+            "bow": "Langbogen",
+            "class": "Herrren",
+            "club": "BSFD Schallbach",
+            "scores": [],
+            "total_score": 0
+        },
+        "Sandra Griesser": {
+            "name": "Sandra Griesser",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "BSG Riegel ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Sandra Gross": {
+            "name": "Sandra Gross",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "BSG Riegel",
+            "scores": [],
+            "total_score": 0
+        },
+        "Ilse Duschek ": {
+            "name": "Ilse Duschek ",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "BSG Riegel ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Michael Becker": {
+            "name": "Michael Becker",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "BSG Riegel ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Peter Duschek": {
+            "name": "Peter Duschek",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "BSG Riegel ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Klaus Hei\u00df": {
+            "name": "Klaus Hei\u00df",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "BSFD Schallbach",
+            "scores": [],
+            "total_score": 0
+        },
+        "Mirjam Weissenfeld": {
+            "name": "Mirjam Weissenfeld",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "BSFD Schallbach",
+            "scores": [],
+            "total_score": 0
+        },
+        "Heiko Diesslin": {
+            "name": "Heiko Diesslin",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "ATAKE",
+            "scores": [],
+            "total_score": 0
+        },
+        "Celine Diesslin": {
+            "name": "Celine Diesslin",
+            "bow": "Compound",
+            "class": "Jugend(bis 16)",
+            "club": "ATAKE",
+            "scores": [],
+            "total_score": 0
+        },
+        "Michael Massow": {
+            "name": "Michael Massow",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "Bogenparcours Club Sexau",
+            "scores": [],
+            "total_score": 0
+        },
+        "Janina Ernst": {
+            "name": "Janina Ernst",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Damen",
+            "club": "Bogenparcours Club Sexau",
+            "scores": [],
+            "total_score": 0
+        },
+        "Wiesner Rainer": {
+            "name": "Wiesner Rainer",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "WTS Freiburg ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Willmann Horst": {
+            "name": "Willmann Horst",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "Teningen",
+            "scores": [],
+            "total_score": 0
+        },
+        "Geschwander August": {
+            "name": "Geschwander August",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "Teningen ",
+            "scores": [],
+            "total_score": 0
+        },
+        "Treffeisen Daniel": {
+            "name": "Treffeisen Daniel",
+            "bow": "Recurvebogen(unvisiert)",
+            "class": "Herrren",
+            "club": "WTF",
+            "scores": [],
+            "total_score": 0
+        },
+        "Urs Horn": {
+            "name": "Urs Horn",
+            "bow": "Recurvebogen(visiert)",
+            "class": "Jugend(bis 16)",
+            "club": "BSC Herbolzheim",
+            "scores": [],
+            "total_score": 0
+        },
+        "Kai Kr\u00e4mer": {
+            "name": "Kai Kr\u00e4mer",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "Bernstein Eagles Michelbach",
+            "scores": [],
+            "total_score": 0
+        },
+        "Engemann Susane": {
+            "name": "Engemann Susane",
+            "bow": "Compound",
+            "class": "Damen",
+            "club": "Teningen",
+            "scores": [
+                423
+            ],
+            "total_score": 423
+        },
+        "Thomas Maier": {
+            "name": "Thomas Maier",
+            "bow": "Compound",
+            "class": "Herrren",
+            "club": "SSV Widerhold",
+            "scores": [],
+            "total_score": 0
+        }
+    }
+}

@@ -134,11 +134,15 @@
 </script>
 
 <div class="white row">
-    <input type="number" id="round_index" min="1" onchange="update_round_index();" value="1">
-    <label for="round_index">Round index</label>
-    <ul id="bows" class="collection with-header">
-
-    </ul>
+    <input class="col s8" type="number" id="round_index" min="1" onchange="update_round_index();" value="1">
+    <label class="col s2" for="round_index">Round index</label>
+    <button class="col s2 btn waves-effect waves-light" type="button" onclick="update_competition();">Print
+        <i class="material-icons right">print</i>
+    </button>
 </div>
+
+<ul id="bows" class="collection with-header">
+
+</ul>
 
 {% endblock %}

@@ -118,6 +118,7 @@ class Competition:
             sorted_dict[bow_type][archer_class].append(archer.to_dict())
 
             sorted_dict[bow_type][archer_class].sort(key=lambda entry: entry["total_score"])
+            sorted_dict[bow_type][archer_class].reverse()
 
         return sorted_dict
 
