@@ -19,6 +19,8 @@ class Frontend:
             ["/scoring/", "scoring_html", self.scoring, ["GET"]],
             ["/archers/", "archers_html", self.archers, ["GET"]],
             ["/edit_competition/", "edit_competition_html", self.edit, ["GET"]],
+            ["/print_archers/", "print_archers", self.print_archers, ["GET"]],
+            ["/print_scores/", "print_scores", self.print_scores, ["GET"]],
         ]
 
         for endpoint in self.url_endpoints:
@@ -43,3 +45,9 @@ class Frontend:
 
     def edit(self):
         return render_template("settings.html")
+
+    def print_archers(self):
+        return render_template("print_archers.html")
+
+    def print_scores(self):
+        return render_template("print_scores.html")

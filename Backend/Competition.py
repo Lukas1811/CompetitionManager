@@ -1,5 +1,5 @@
 import json
-from os import listdir
+from os import listdir, remove
 from os.path import abspath
 from datetime import datetime
 
@@ -101,6 +101,8 @@ class Competition:
                 archer_count += 1
 
             log.info("Loaded {0} archers, from file: {1}".format(archer_count, archer_file))
+
+        remove(archer_file)
 
     def to_sorted_dict(self) -> dict:
         sorted_dict = dict()

@@ -1,5 +1,26 @@
 {% extends "header.html" %} {% block page_content %}
 
+<style>
+    @media print {
+        ul {
+            page-break-after: always;
+            page-break-inside: always;
+        }
+        li {
+            page-break-after: auto;
+            page-break-inside: avoid;
+        }
+        @page {
+            size: auto;
+            margin: 5;
+        }
+        nav,
+        .nav {
+            display: none;
+        }
+    }
+</style>
+
 <script>
     var current_archers;
     var round_index = 1;
@@ -20,7 +41,7 @@
                 .replace(")", "_");
 
 
-            $("#bows").append(` <ul id="bow_${bow_id}" class="collection-item collection" style="padding: 5px !important; margin: 5px 0px !important">
+            $("#bows").append(` <ul id="bow_${bow_id}" style="padding: 5px !important; margin: 5px 0px !important">
                                             <h3>${bow_type}</h3>
                                         </ul>`);
 
@@ -112,12 +133,6 @@
             url: "/competition/" + get_url_param("competition") + "/sorted_archers",
             type: 'get',
             success: function(data) {
-                M.toast({
-                    html: "Successfully loaded!"
-                });
-
-                console.log(data)
-
                 update_archers(data);
             },
             error: function() {
@@ -133,15 +148,17 @@
     });
 </script>
 
-<div class="white row">
-    <input class="col s8" type="number" id="round_index" min="1" onchange="update_round_index();" value="1">
-    <label class="col s2" for="round_index">Round index</label>
-    <button class="col s2 btn waves-effect waves-light" type="button" onclick="update_competition();">Print
+<div class="white row nav">
+    <div class="col s10">
+        <input type="number" id="round_index" min="1" onchange="update_round_index();" value="1">
+        <label for="round_index">Round index</label>
+    </div>
+    <button class="col s2 btn waves-effect waves-light" type="button" href>Print
         <i class="material-icons right">print</i>
     </button>
 </div>
 
-<ul id="bows" class="collection with-header">
+<ul id="bows">
 
 </ul>
 

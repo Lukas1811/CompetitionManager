@@ -1,0 +1,122 @@
+{% extends "header.html" %} {% block page_content %}
+
+<style>
+    @media print {
+        ul {
+            page-break-after: always;
+            page-break-inside: always;
+        }
+        li {
+            page-break-after: auto;
+            page-break-inside: avoid;
+        }
+        @page {
+            size: auto;
+            margin: 5;
+        }
+        nav,
+        .nav {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    var current_archers;
+    var round_index = 1;
+
+    function update_round_index() {
+        round_index = $("#round_index").val()
+        update_archers(current_archers)
+    }
+
+    function update_archers(data) {
+        current_archers = data;
+
+        $("#bows").empty();
+
+        for (bow_type in data) {
+            var bow_id = bow_type.replace(" ", "_")
+                .replace("(", "_")
+                .replace(")", "_");
+
+            for (archer_class in data[bow_type]) {
+                var class_id = archer_class.replace(" ", "_")
+                    .replace("(", "_")
+                    .replace(")", "_");
+
+                $("#bows").append(` <ul id="class_${bow_id}_${class_id}" class="with-header collection" style="padding: 2px !important;  margin: 0px  !important">
+                                        <h4>${bow_type} ${archer_class}</h4>
+                                        <div class="row valign-wrapper" style="padding: 0px !important;  margin: 0px !important">
+                                            <li class="col s3 collection-header">
+                                                <p style="font-weight: bold">Name</p>
+                                            </li>
+                                            <li class="col s3 collection-header">
+                                                <p style="font-weight: bold">Club</p>
+                                            </li>
+                                            <li class="col s3 collection-header">
+                                                <p style="font-weight: bold">Round Score</p>
+                                            </li>
+                                            <li class="col s3 collection-header">
+                                                <p style="font-weight: bold">Total Score</p>
+                                            </li>
+                                        </div>
+                                    </ul>`);
+
+                for (var it = 0; it < data[bow_type][archer_class].length; it++) {
+                    var archer = data[bow_type][archer_class][it];
+
+                    var scores = "";
+
+                    for (var index = 0; index < archer["scores"].length; index++) {
+                        console.log(archer["scores"])
+                        scores += (index == 0) ? archer["scores"][index] : ", " + archer["scores"][index];
+                    }
+
+                    $("#class_" + bow_id + "_" + class_id)
+                        .append(`<li class="collection-item row valign-wrapper" style="padding: 2px !important">
+                                            <p class="col s3">${archer["name"]}</p>
+                                            <p class="col s3">${archer["club"]}</p>
+                                            <p class="col s3">${scores}</p>
+                                            <p class="col s3">${archer["total_score"]}</p>
+                                        </li>`);
+
+                }
+            }
+        }
+    }
+
+    function load_archers() {
+        $.ajax({
+            url: "/competition/" + get_url_param("competition") + "/sorted_archers",
+            type: 'get',
+            success: function(data) {
+                update_archers(data);
+            },
+            error: function() {
+                M.toast({
+                    html: "Could not load sorted archers!"
+                });
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        load_archers();
+    });
+</script>
+
+<div>
+    <ul class="collection with-header" id="bows">
+        <li class="collection-header" id="archers_list">
+            <div class="row">
+                <p class="col s3">Name</p>
+                <p class="col s3">Bow</p>
+                <p class="col s3">Class</p>
+                <p class="col s3">Club</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}

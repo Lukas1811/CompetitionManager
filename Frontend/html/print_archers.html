@@ -1,0 +1,88 @@
+{% extends "header.html" %} {% block page_content %}
+
+<style>
+    @media print {
+        ul {
+            page-break-after: always;
+            page-break-inside: always;
+        }
+        li {
+            page-break-after: auto;
+            page-break-inside: avoid;
+        }
+        @page {
+            size: auto;
+            margin: 5;
+        }
+        nav,
+        .nav {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    function get_url_param(name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results[1] || 0;
+    }
+
+    function load_archers() {
+        $.ajax({
+            type: "GET",
+            url: "/competition/" + get_url_param("competition") + "/archers",
+            success: function(data, status, request_object) {
+                $(".archer_entrys").remove();
+
+                for (var it = 0; it < data["archers"].length; it++) {
+                    $("#archers_list").append(`<li class="row collection-item archer_entrys valign-wrapper" style="padding: 3px !important;">
+                                                <p class="col s3 left" style="padding: 0px !important; margin: 5px !important;">${data["archers"][it].name}</p>
+                                                <p class="col s3 left" style="padding: 0px !important; margin: 5px !important;">${data["archers"][it].bow}</p>
+                                                <p class="col s3 left" style="padding: 0px !important; margin: 5px !important;">${data["archers"][it].class}</p>
+                                                <p class="col s3 left" style="padding: 0px !important; margin: 5px !important;">${data["archers"][it].club}</p>
+                                            </li>`);
+                }
+            },
+            error: function(data, status, request_object) {
+
+            }
+        });
+    }
+
+    function load_competition_data() {
+        $.get("/competition/" + get_url_param("competition") + "/data", function(data, status) {
+            for (let it = 0; it < data["bows"].length; it++) {
+                name = data["bows"][it]
+                $("#new_archer_bow").append("<option value='" + name + "' selected>" + name + "</option>");
+            }
+
+            for (let it = 0; it < data["classes"].length; it++) {
+                name = data["classes"][it]
+                $("#new_archer_class").append("<option value='" + name + "' selected>" + name + "</option>");
+            }
+
+            $('select').formSelect();
+        });
+    }
+
+    $(document).ready(function() {
+        $('select').formSelect();
+        load_competition_data();
+        load_archers();
+    });
+</script>
+
+<div>
+    <ul class="collection with-header">
+        <li class="collection-header" id="archers_list">
+            <div class="row">
+                <p class="col s3">Name</p>
+                <p class="col s3">Bow</p>
+                <p class="col s3">Class</p>
+                <p class="col s3">Club</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}

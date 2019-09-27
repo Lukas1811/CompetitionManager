@@ -296,7 +296,6 @@ class API:
 
     @staticmethod
     def existing_competitions():
-        print(Competition.list_competitions())
         return jsonify({
             "status": "SUCCESS",
             "competitions": Competition.list_competitions()
