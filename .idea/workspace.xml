@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="843608f7-af10-4509-8ad2-a13343eff38b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/html/print_scores.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/API.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Competition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Competition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/tes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/tes_archers" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/test_archers" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/html/print_scores.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/html/print_scores.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/html/scoring.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/html/scoring.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569364090137</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added pages for printing">
+      <created>1569586573118</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569586573118</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +168,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added scoring and settings frontend" />
     <MESSAGE value="Added import of archers from json files to frontend and fixed this feature at the backend changed the Scoring tab to an Archers tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added import of archers from json files to frontend and fixed this feature at the backend changed the Scoring tab to an Archers tab" />
+    <MESSAGE value="Added pages for printing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pages for printing" />
   </component>
 </project>

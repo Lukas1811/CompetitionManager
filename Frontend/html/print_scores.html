@@ -25,6 +25,21 @@
     var current_archers;
     var round_index = 1;
 
+    function autoScroll() {
+        setInterval(function() {
+            $("html, body").animate({
+                scrollTop: $(document).height()
+            }, $(document).height() * 10);
+
+            setTimeout(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, $(document).height() * 10);
+            }, 200);
+
+        }, 200);
+    }
+
     function update_round_index() {
         round_index = $("#round_index").val()
         update_archers(current_archers)
@@ -103,6 +118,7 @@
 
     $(document).ready(function() {
         load_archers();
+        autoScroll();
     });
 </script>
 
