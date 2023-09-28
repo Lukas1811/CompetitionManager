@@ -55,8 +55,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.CompetitionManger">
-    <configuration name="CompetitionManger" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.CompetitionManager">
+    <configuration name="CompetitionManager" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="CompetitionManager" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,7 +68,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CompetitionManger.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CompetitionManager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -89,7 +89,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CompetitionManger.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CompetitionManager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,7 +99,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.CompetitionManger" />
+      <item itemvalue="Python.CompetitionManager" />
       <item itemvalue="Python.run" />
     </list>
   </component>
